@@ -1,0 +1,12 @@
+.password:after,
+.pets-name:after,
+.sitepage::after {
+    content: "*";
+    color: red;
+}
+div {
+    margin-bottom: 10px;
+}
+label {
+    margin-right: 5px;
+}

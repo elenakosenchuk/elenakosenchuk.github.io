@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>Form exercise</h1>
+    <form action="#" method="GET" enctype="multipart/form-data" id="my_form"
+        onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+        <fieldset>
+            <legend><strong>Your data</strong></legend>
+            <div><label for="unchanged">Don't change</label>
+                <input type="text" name="unchanged" id="unchanged" disabled readonly value="You couldn't change it">
+            </div>
+
+            <div><label for="some-text">Some text</label>
+                <input type="text" name="some-text" id="some-text" readonly value="You can only read it">
+            </div>
+
+            <div><label class="pets-name" for="pets-name">Pet's name</label>
+                <input type="text" name="pets-name" id="pets-name" required placeholder="Your pets name">
+            </div>
+
+            <div><label for="email">Your email:</label>
+                <input type="email" name="email" id="email" placeholder="ivanov@domain.com">
+            </div>
+            <div><label class="password" for="password">Your secret password</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <div><label for="birthday">Enter birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <div><label for="quantity">How many trees near your hous:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="100">
+            </div>
+
+            <div><label for="flour">Your floor</label>
+                <input type="radio" id="wooden" name="wooden" value="wooden">
+                <label for="wooden">Wooden</label>
+                <input type="radio" id="cover" name="cover" value="cover">
+                <label for="cover">Cover</label>
+                <input type="radio" id="stone" name="stone" value="stone">
+                <label for="stone">Stone</label>
+            </div>
+
+            <div><label for="networks">Social networks</label>
+                <input type="checkbox" id="facebook" name="facebook" value="Facebook">
+                <label for="facebook">Facebook</label>
+
+                <input type="checkbox" id="twitter" name="twitter" value="Twitter">
+                <label for="twitter">Twitter</label>
+
+                <input type="checkbox" id="instagramm" name="instagramm" value="Instagramm">
+                <label for="instagramm">Instagramm</label>
+
+                <input type="checkbox" id="telegramm" name="telegramm" value="Telegramm">
+                <label for="telegramm">Telegramm</label>
+
+                <input type="checkbox" id="linkedin" name="linkedin" value="Linkedin">
+                <label for="linkedin">Linkedin</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Other information</strong></legend>
+            <div><label for="favcolor">Choose your favourite colour:</label>
+                <input type="color" id="favcolor" name="favcolor">
+            </div>
+
+            <div><label for="phone">Enter your phone number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+            </div>
+
+            <div><label for="time-select">Select the time</label>
+                <input type="time" id="time-select" name="time-select">
+            </div>
+
+            <div><label class="sitepage" for="sitepage">Enter your favourite website:</label>
+                <input type="url" id="sitepage" name="sitepage" required>
+            </div>
+
+            <div><label for="stripe">Select number fron 1 to 10</label>
+                <input type="range" id="stripe" name="stripe" min="1" max="10">
+            </div>
+
+            <div><label for="myfile">Add your file:</label>
+                <input type="file" id="myfile" name="myfile">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Not inputs</strong></legend>
+            <div><label for="drinks">Choose a drink</label>
+                <select name="drinks">
+                    <option value="main" selected>= Choose a drink =</option>
+                    <optgroup label="Unalcohol drinks">
+                        <option value="tea">Tea</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="lemonade">Lemonade</option>
+                        <option value="juice">Juice</option>
+                    </optgroup>
+                    <optgroup label="Alcohol drinks">
+                        <option value="beer">Beer</option>
+                        <option value="vine">Vine</option>
+                        <option value="tekila">Tekila</option>
+                        <option value="rom">Rom</option>
+                        <option value="coktail">Coktail</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div><label for="fav-drinks">Your favourite drinks</label>
+                <select name="favourite-drinks" id="fav-drinks" size="6">
+                    <optgroup label="Unalcohol drinks">
+                        <option value="tea">Tea</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="lemonade">Lemonade</option>
+                        <option value="juice">Juice</option>
+                    </optgroup>
+                    <optgroup label="Alcohol drinks">
+                        <option value="beer">Beer</option>
+                        <option value="vine">Vine</option>
+                        <option value="tekila">Tekila</option>
+                        <option value="rom">Rom</option>
+                        <option value="coktail">Coktail</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div><label for="textfield">Here write your wishes</label>
+                <textarea rows="6" cols="50"
+                    name="textfield">You can write 50 simbols in line and 6 lines in rcolumn</textarea>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Buttons</strong></legend>
+            <input type="submit" value="Send">
+            <input type="reset" value="Cansel">
+            <input type="button" value="Some button">
+            <input type="button" value="Blocked button" disabled>
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
