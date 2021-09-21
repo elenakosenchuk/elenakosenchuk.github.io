@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    font-family: sans-serif;
+}
+header {
+    background-color: #222222;
+}
+
+.header_title {
+    border-left: #71716f solid 1px;
+    border-right: #71716f solid 1px;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% contain;
+    height: 125px;
+    margin: 0 15%;
+    padding: 45px 12px;
+}
+h1 {
+    color: #ededed;
+}
+a {
+    text-decoration: none;
+    color: #fffffd;
+    padding: 14px;
+}
+.green_menu {
+    background: linear-gradient(179deg, rgba(176, 217, 17, 1) 50%, rgba(139, 171, 10, 1) 88%);
+}
+nav ul li {
+    display: inline-block;
+}
+nav {
+    border-left: #c6c6c6 solid 1px;
+    border-right: #c6c6c6 solid 1px;
+    line-height: 30px;
+    width: 70%;
+    margin: 0 15%;
+}
+.main_list li {
+    border-right: #c6c6c6 solid 1px;
+}
+main {
+    border-left: #c6c6c6 solid 1px;
+    border-right: #c6c6c6 solid 1px;
+    width: 70%;
+    background-color: #ffffff;
+    margin: 0 15%;
+    padding: 8px;
+    font-size: 14px;
+}
+.title {
+    border-bottom: #dbeaa3 solid 1px;
+    width: 100%;
+}
+p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+span {
+    color: #2d6a12;
+}
+h2 {
+    color: #6d7f85;
+    padding-bottom: 1px;
+}
+.list_changes {
+    border-bottom: #dbeaa3 solid 1px;
+    width: 100%;
+}
+.list_changes ul {
+    margin: 15px 40px;
+    line-height: 1.5;
+}
+.list_changes p {
+    margin-left: 15px;
+}
+.list_design_notes {
+    border-bottom: #dbeaa3 solid 1px;
+    width: 100%;
+}
+.list_design_notes ul {
+    margin: 20px 40px;
+    line-height: 1.5;
+}
+.list_design_notes p {
+    margin-left: 15px;
+}
+.content_header_one p {
+    margin: 20px 15px 24px;
+}
+footer {
+    width: 70%;
+    margin: 0 15%;
+    background: linear-gradient(179deg, rgba(176, 217, 17, 1) 50%, rgba(139, 171, 10, 1) 88%);
+}
+footer p {
+    line-height: 30px;
+    width: 100%;
+    margin-top: 0px;
+    text-align: right;
+    padding-right: 15px;
+    color: #fffffd;
+}
