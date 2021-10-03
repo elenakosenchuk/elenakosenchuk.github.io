@@ -1,0 +1,146 @@
+* ::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: "PT Sans", sans-serif;
+    color: #777777;
+}
+ol,
+ul {
+    list-style: none;
+}
+.clr {
+    clear: both;
+    display: block;
+    height: 0;
+}
+.container {
+    max-width: 945px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 142px;
+}
+header {
+    text-transform: uppercase;
+    margin-bottom: 100px;
+
+    /* margin-bottom: 106px; */
+}
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 5px;
+}
+h1 {
+    color: #0ec8cb;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    letter-spacing: 2.5px;
+}
+.header_text {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 510px;
+    text-align: center;
+    line-height: 30px;
+}
+h3 {
+    font-size: 22px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    display: table-cell;
+    text-align: center;
+    width: 230px;
+    height: 95px;
+    vertical-align: middle;
+}
+p {
+    font-size: 14px;
+    line-height: 2;
+    margin: 0;
+    padding: 0 20px;
+}
+.anchor {
+    width: 230px;
+    height: 420px;
+    border: 2px colid #ececec;
+    background-color: #f7f7f7;
+    float: left;
+    padding: 55px 0px 61px;
+}
+.stone {
+    width: 230px;
+    height: 420px;
+    border: 2px colid #ececec;
+    background-color: #f7f7f7;
+    float: left;
+    padding: 55px 0px 35px;
+}
+.glasses {
+    width: 230px;
+    height: 420px;
+    border: 2px colid #ececec;
+    background-color: #f7f7f7;
+    float: left;
+    padding: 55px 0px 61px;
+}
+.monitore {
+    width: 230px;
+    height: 420px;
+    border: 2px colid #ececec;
+    background-color: #f7f7f7;
+    float: left;
+    padding: 55px 0px 61px;
+}
+.icon {
+    width: 65px;
+    height: 65px;
+    background-image: url(../images/namaste-sprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+}
+.anchor:hover,
+.stone:hover,
+.glasses:hover,
+.monitore:hover {
+    background-color: #0ec8cb;
+    color: #fff;
+}
+.anchor:hover .icon_anchor {
+    background-position: 0px -91px;
+}
+
+.icon_stone {
+    background-position: -113px 0px;
+}
+.stone:hover .icon_stone {
+    background-position: -113px -91px;
+}
+.icon_glasses {
+    background-position: -218px 0px;
+}
+.glasses:hover .icon_glasses {
+    background-position: -218px -91px;
+}
+.icon_monitore {
+    background-position: -324px 0px;
+}
+.monitore:hover .icon_monitore {
+    background-position: -324px -91px;
+}
