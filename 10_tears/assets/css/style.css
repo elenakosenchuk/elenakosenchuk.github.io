@@ -1,0 +1,122 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;    
+}
+body {
+    background-color: #464f54;
+}
+.pannel {
+    width: 75%;
+    min-width: 800px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    padding-top: 45px;
+    /*display: flex;  
+    flex-wrap: wrap;  
+    justify-content: flex-end;*/
+    
+}
+.title {
+    width: 100%;
+    height: 190px;
+    background-color: #000;
+    color: #fff;
+    padding-left: 60px;
+    padding-top: 45px;
+    
+    
+}
+label {
+    display: block;
+    font-family: 'ProximaNova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    /* line-height: 109px; */
+    color: #767676;
+    text-transform: uppercase;
+    letter-spacing: 2;
+
+    
+}
+#title-input {
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 75px;
+    background-color: #000;
+    color: #fff;
+    border-bottom: 1px solid #767676;
+}
+input::placeholder {
+    color: #fff;
+}
+.list_icons {
+    width: calc(100% - 65px);
+    height: 75px;
+    background-color: #f1b82b;
+    color: #fff;
+    margin-left: 65px;
+}
+.list_icons ul li {
+    display: inline-block;
+}
+.container {
+    width: 90%;
+    max-width: 1060px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 150px;
+    padding: 180px 120px 30px 125px;
+    text-align: justify;
+    
+}
+
+.pre_h {
+    font-family: 'ProximaNova';
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #b4b4b4;  
+
+}
+h1 {
+    font-family: 'FuturaPT';
+    font-style: heavy;
+    font-weight: 900;
+    font-size: 78px;
+    text-transform: uppercase;
+    line-height: 74px;
+}
+.article p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 27px;
+    line-height: 40px;
+    padding-bottom: 40px;
+}
+.article .italic {
+    font-size: 30px;
+    line-height: 62px;
+    color: #8f8f8f;
+    font-style: italic;
+    padding-bottom: 60px;
+}
+.article p span {
+    font-style: italic;
+}
