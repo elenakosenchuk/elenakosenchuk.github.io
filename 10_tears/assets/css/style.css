@@ -27,6 +27,7 @@ body {
     position: absolute;
     top: 45px;
     right: 0;
+    z-index: 20;
 
 }
 
@@ -114,18 +115,19 @@ input::placeholder {
     margin-top: 150px;
     padding: 195px 120px 30px 125px;
     text-align: justify;
+    position: relative;
+    z-index: 0;
 
 }
 
-.vl {
-    height: calc(100% - 107px);
-    margin-left: 70px;
-    border-left: 1px solid #8f8f8f;
+.container::before {
+    content: '';
     position: absolute;
-    top: 150px;
-    left: 18%;
+    border-left: 1px solid #767676;
+    top: 0;
+    left: 70px;
+    height: 100%;
 }
-
 .pre_h {
     font-family: 'ProximaNova';
     font-weight: 400;
@@ -153,6 +155,7 @@ h1 {
     line-height: 40px;
     letter-spacing: -0.1px;
     padding-bottom: 25px;
+    
 }
 
 .article .italic {
