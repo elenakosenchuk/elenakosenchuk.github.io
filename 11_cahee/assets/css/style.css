@@ -98,8 +98,8 @@ html, body {
     background-color: #494f5a;
     text-transform: uppercase;
     text-align: center;
-    top: -60px;
-    left: -60px;
+    top: 0;
+    left: 0;
     z-index: -10;
     transition: all 0.5s ease;
 
