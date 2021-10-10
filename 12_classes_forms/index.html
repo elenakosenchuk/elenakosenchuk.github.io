@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/plugins/styler/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/plugins/styler/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+    <div class="container">
+    <form action="http://127.0.0.1:5500/index.html" method="get">
+        <input type="text" name="search" value="iphone 13">
+        <br>
+
+        <button type="submit">Search</button>
+    </form>
+    <hr>
+    <form action="http://127.0.0.1/test/index.php?hello=world&i_am=get_param" method="post" target="_blank"
+        enctype="multipart/form-data">
+        <input type="hidden" name="do" value="add_callback">
+        <input type="hidden" name="token" value="oer8utv90n8h89b&G&^G6tvdf6tvbUBGCVresd765fbtyvCTRD76tv">
+
+        <fieldset>
+            <legend>User data</legend>
+            <input type="file" name="userpic">
+            <br>
+            <input type="text" name="username" value="" minlength="5">
+            <br>
+            <input type="text" name="second_name" value="Doe" readonly>
+            <br>
+            <input type="text" name="email" value="qwe@qwe.qwe">
+            <br>
+            <input type="text" name="email_second" value="asd@asd.asd">
+            <br>
+        </fieldset>
+        <input type="password" name="pass" value="">
+        <br>
+
+        <select name="drink">
+            <option value="зеленый чаёчек">Green Tea</option>
+            <option value="coffee">Coffee</option>
+            <option value="beer" disabled>Beer</option>
+            <option value="wine">Wine</option>
+        </select>
+        <br>
+        <textarea name="message" cols="50" rows="5">Lorem ipsum dolor sit amet.</textarea>
+        <br>
+        <label><input type="checkbox" name="prod[]" value="bread"> Bread</label><br>
+        <label><input type="checkbox" name="prod[]" value="milk"> Milk</label><br>
+        <label><input type="checkbox" name="prod[]" value="butter"> Butter</label><br>
+        <br>
+        <label><input type="radio" name="prod2" value="bread"> Bread</label><br>
+        <label><input type="radio" name="prod2" value="milk"> Milk</label><br>
+        <label><input type="radio" name="prod2" value="butter"> Butter</label><br>
+
+
+        <button type="submit">Send</button>
+        <button type="reset">Reset</button>
+
+    </form>
+</div>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/styler/jquery.formstyler.min.js"></script>
+    <script>
+        $(function() {
+
+$('input, select').styler();
+
+});
+    </script>
+</body>
+
+</html>
