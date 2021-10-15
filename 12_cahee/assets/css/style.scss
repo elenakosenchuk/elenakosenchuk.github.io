@@ -17,7 +17,10 @@ li {
 a {
     text-decoration: none;
 }
-
+img {
+    vertical-align: top;
+    width: 100%;
+}
 .container {
     width: 100%;    
     font-family: 'Raleway';
@@ -218,4 +221,68 @@ a {
 
         }
     }    
+}
+
+.main-gallery--yellow {
+    width: 100%;
+    background-color: #ffe92f;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .content-block__item--yellow {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        .gallery-title {
+            width: 610px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 45px;
+            .content-block__title--black {
+                font-weight: 700;
+                font-size: 90px;
+                line-height: 27px;
+                margin-bottom: 60px;
+            } 
+        }               
+    }
+    .gallery-photo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 50px;
+        .gallery-photo__item--w66 {
+            width: calc(66.6666% - 15px);
+            height: 100%;
+            box-shadow: 4px 0px 10px #000;            
+        }
+        .gallery-photo__item--w33 {
+            width: calc(33.3333% - 15px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;
+            .gallery-photo__item-top, .gallery-photo__item-bottom {
+                box-shadow: 2px 0px 5px #000;
+                height: 100%;
+            }               
+        }
+        .gallery-photo__item--w50 {
+            width: calc(50% - 15px);
+            height: 100%;
+            box-shadow: 2px 0px 5px #000;            
+        }        
+    }    
+    .content-block__button--blue {
+            background-color: #5585a2;
+            margin-left: calc(50% - 100px);
+            box-shadow: 2px 0px 5px #000;
+            text-transform: uppercase;
+            color: #fff;
+            &:hover {
+                background-color: #155279;
+            }         
+    }         
 }
