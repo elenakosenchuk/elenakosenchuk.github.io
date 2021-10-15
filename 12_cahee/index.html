@@ -7,42 +7,84 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
+
 <body>
-    <header class="main-content__header">
-        <div class="main-content__logo image">
-            <img class="image__logo" src="assets/images/logo.png" alt="Logo">
-        </div>
-        <nav class="main-content__navigation navigation">
-            <ul class="navigation-list">
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">Home</a></li>
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">About</a></li>
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">SERVICES</a></li>
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">GALLERY</a></li>
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">BLOG</a></li>
-                <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">CONTACT</a></li>
-            </ul>
-        </nav>        
+    <header class="header">
+        <div class="main-content__header">
+            <div class="main-content__logo image">
+                <img class="image__logo" src="assets/images/logo.png" alt="Logo">
+            </div>
+            <nav class="main-content__navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">Home</a></li>
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">About</a></li>
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">SERVICES</a></li>
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">GALLERY</a></li>
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">BLOG</a></li>
+                    <li class="navigation-list__item"><a class="navigation-list__item--link" href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>        
     </header>
-    <div class="main-wrapper--white">    
-        <div class="main-content">            
-            <section class="content-block__item content-block__item--white">
+
+    <main class="container">
+        <section class="main-content--white">                       
+            <div class="content-block__item content-block__item--white">
                 <h2 class="content-block__title content-block__title--black">Fresh Life</h2>
                 <p class="content-block__text content-block__text--black">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                 <button class="content-block__button content-block__button--orange">GET FREE NOW</button>
-            </section>           
-        </div>
-    </div>
-<div class="main-wrapper--bleu">
-    <div class="main-content">
-        <section class="content-block__item content-block__item--blue">
-            <div class="content-block__wrapper">
-            <h2 class="content-block__title content-block__title--white">About Us</h2>
-            <p class="content-block__text content-block__text--white">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-            <p class="content-block__text content-block__text--white">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
-        </div>
-            <div class="clr"></div>
+            </div>
         </section>
-    </div>
-</div>   
+
+        <section class="main-content--bleu">
+            <div class="content-block__item content-block__item--blue">
+                <div class="content-block__inner">
+                    <h2 class="content-block__title content-block__title--white">About Us</h2>
+                    <p class="content-block__text content-block__text--white">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                    <p class="content-block__text content-block__text--white">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                </div>
+            </div>                         
+        </section>
+        
+        <section class="main-services--lightblue">
+            <div class="content-block__item content-block__item--lightblue">
+                <div class="services-list">
+                    <ul class="services-list">
+                        <li class="services-list__item"><a class="services-list__item--link" href="#"><span class="services-list__item--text">Online Shopping</span><svg class="services-list__item--icon">
+                            <use xlink:href="assets/images/sprite.svg#trolley"></use>
+                        </svg></a></li>
+                        <li class="services-list__item"><a class="services-list__item--link" href="#"><span class="services-list__item--text">Quality Product</span><svg class="services-list__item--icon">
+                            <use xlink:href="assets/images/sprite.svg#hand"></use>
+                        </svg></a></li>
+                        <li class="services-list__item"><a class="services-list__item--link" href="#"><span class="services-list__item--text planet">Domestic & International Delivery</span><svg class="services-list__item--icon">
+                            <use xlink:href="assets/images/sprite.svg#planet"></use>
+                        </svg></a></li>
+                        <li class="services-list__item"><a class="services-list__item--link" href="#"><span class="services-list__item--text">Well Organized</span class="services-list__item--text"><svg class="services-list__item--icon">
+                            <use xlink:href="assets/images/sprite.svg#carrot"></use>
+                        </svg></a></li>                        
+                    </ul>
+                </div>
+                <h2 class="content-block__title content-block__title--white">Our Services</h2>
+            </div>
+        </section>    
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+    <script>
+        $(function(){
+            $(window).on('scroll', function(){
+                if($(window).scrollTop()>0){
+                    if(!$("header").hasClass("scrolled")){
+                        $("header").addClass("scrolled");
+                    }
+                }else{
+                    if($("header").hasClass("scrolled")){
+                        $("header").removeClass("scrolled");
+                    }
+                }
+            });
+        });
+    </script> 
 </body>
 </html>
