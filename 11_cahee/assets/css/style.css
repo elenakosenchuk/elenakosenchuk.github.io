@@ -9,7 +9,7 @@ html, body {
 }
 .container {
     width: 100%; /*С шириной не понятно. По пиксель-перфекту получается 90%, хотя логичнее, мне кажется, если ширана будет 100%*/
-    min-width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #b07cf7;
     font-family: 'Raleway';
