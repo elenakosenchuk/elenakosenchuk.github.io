@@ -96,6 +96,7 @@ img {
   font-weight: 300;
   font-size: 20px;
   line-height: 27px;
+  cursor: pointer;
 }
 
 .content-block__text {
@@ -292,4 +293,46 @@ img {
 }
 .main-gallery--yellow .content-block__button--blue:hover {
   background-color: #155279;
+}
+
+.main-gallery--subscribe {
+  background: url(../images/bgi-berry.png) center right/cover no-repeat;
+  width: 100%;
+}
+.main-gallery--subscribe .content-block__item--subscribe {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
+.main-gallery--subscribe .content-block__item--subscribe .subscribe-title {
+  width: 570px;
+  margin-bottom: 30px;
+}
+.main-gallery--subscribe .content-block__item--subscribe .subscribe-title .content-block__title--small {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 27px;
+  margin-bottom: 30px;
+}
+.main-gallery--subscribe .content-block__item--subscribe .subscribe-form_texiarea {
+  width: 570px;
+  height: 55px;
+  color: #929292;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 27px;
+  padding: 20px 16px;
+  margin-right: 25px;
+}
+.main-gallery--subscribe .content-block__item--subscribe .content-block__button--green {
+  text-transform: uppercase;
+  background-color: #96b92c;
+  color: #fff;
+  box-shadow: 2px 0px 5px #000;
+  width: 170px;
+}
+.main-gallery--subscribe .content-block__item--subscribe .content-block__button--green:hover {
+  background-color: #5f7a0b;
 }
