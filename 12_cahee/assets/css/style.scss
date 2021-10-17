@@ -256,7 +256,7 @@ img {
         margin-bottom: 50px;
         .gallery-photo__item--w66 {
             width: calc(66.6666% - 15px);
-            height: 100%;
+            // height: 100%;
             box-shadow: 4px 0px 10px #000;            
         }
         .gallery-photo__item--w33 {
@@ -267,12 +267,12 @@ img {
             gap: 30px;
             .gallery-photo__item-top, .gallery-photo__item-bottom {
                 box-shadow: 2px 0px 5px #000;
-                height: 100%;
+                // height: 100%;
             }               
         }
         .gallery-photo__item--w50 {
             width: calc(50% - 15px);
-            height: 100%;
+            // height: 100%;
             box-shadow: 2px 0px 5px #000;            
         }        
     }    
