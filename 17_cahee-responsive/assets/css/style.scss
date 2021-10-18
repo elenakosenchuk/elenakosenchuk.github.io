@@ -139,7 +139,35 @@ img {
     }
 }
 
+.gallery {    
+    background-color: yellow;
+    padding: 30px 0;
+    &_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        .big_pic {
+            flex-basis: calc(66.6666% - 15px);
+        }
+        .top_pics_wrap {
+            flex-basis: calc(33.3333% - 15px);
+            display: flex;            
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;            
+        }
+    }
+    &_bottom {
+        display: flex;
+        justify-content: space-between;
+        .pic {
+            flex-basis: calc(50% - 15px);
+        }
 
+    }
+}
 
 
 

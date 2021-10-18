@@ -42,19 +42,19 @@
             flex-direction: column-reverse;
             justify-content: center;                           
             padding: 0;            
-                .services-list {
-                    width: 70%;
-                    .services-list__item {
-                        height: 50px;
-                        .services-list__item--text {
-                            padding: 10px 0;                   
-                        }
-                    }                
-                    .services-list__item--icon {
-                            width: 30%;
-                            height: 30%;                                                          
+            .services-list {
+                width: 70%;
+                .services-list__item {
+                    height: 50px;
+                    .services-list__item--text {
+                        padding: 10px 0;                   
+                    }
+                }                
+                .services-list__item--icon {
+                    width: 30%;
+                    height: 30%;                                                          
                     }                     
-                }
+            }
                 .content__title--white {
                     margin-bottom: 30px;
                 }
@@ -63,6 +63,25 @@
         
         }
     
+    }
+    .gallery_top {
+        flex-wrap: wrap;
+        .big_pic {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .top_pics_wrap {
+            flex-wrap: wrap;
+            width: 100%;
+            flex-direction: row;
+            .pic {
+                width: calc(50% - 10px);
+
+            }
+        }
+    }
+    .gallery_bottom_pic {
+        width: calc(50% - 10px);
     }
 }
 @media screen and (max-width:600px) {
@@ -86,7 +105,7 @@
                 .services-list__item--icon {
                     width: 15%;
                     height: 50%;                                                          
-            }                  
+                }                  
             }
                                  
         }
@@ -96,6 +115,18 @@
        
         }
     }  
+}
+@media screen and (max-width:450px) {
+    .gallery_bottom .pic, .gallery_top .top_pics_wrap .pic {
+        width: 100%;
+    }
+    .gallery_bottom_pic {
+        flex-wrap: wrap;
+        &:first-child {
+            margin-bottom: 20px;
+        }
+    }
+    
 }
 @media screen and (max-width:400px) {
     .services {
