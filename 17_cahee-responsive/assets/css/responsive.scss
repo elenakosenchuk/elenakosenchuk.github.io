@@ -28,15 +28,14 @@
             margin-left: 0;                     
         }        
         .content__title--white {
-            text-align: center;
-            margin-bottom: 30px;
+            text-align: center;            
         }
     }    
 }
 
 @media screen and (max-width:810px) {
     .services {
-        padding-top: 130px;    
+        padding-top: 0px;    
         .services-content {
             display: flex;                        
             flex-direction: column-reverse;
@@ -45,21 +44,20 @@
             .services-list {
                 width: 70%;
                 .services-list__item {
-                    height: 50px;
+                    height: 60px;
                     .services-list__item--text {
-                        padding: 10px 0;                   
+                        padding: 15px 0;                   
                     }
                 }                
                 .services-list__item--icon {
-                    width: 30%;
-                    height: 30%;                                                          
+                    width: 20%;
+                    height: 20%;                                                          
                     }                     
             }
                 .content__title--white {
-                    margin-bottom: 30px;
-                }
-            
-               
+                    margin-bottom: 10px;
+                    padding: 20px;                 
+                }              
         
         }
     
@@ -94,6 +92,7 @@
     }
     .services {
     .services-content {
+        background: none;
         .services-list {
             width: 100%;
             .services-list__item {
@@ -108,15 +107,15 @@
                 }                  
             }
                                  
-        }
-        .content__title--white {
-            font-size: 30px;
-            }
+        }  
        
         }
     }  
 }
 @media screen and (max-width:450px) {
+    .content__title--white {
+        font-size: 40px;                 
+    }    
     .gallery_bottom .pic, .gallery_top .top_pics_wrap .pic {
         width: 100%;
     }
@@ -133,6 +132,7 @@
         .planet {
             padding: 0;
             overflow: hidden;
+            font-size: 14px;
         }
     }
     
