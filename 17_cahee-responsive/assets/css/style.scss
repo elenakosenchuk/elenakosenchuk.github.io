@@ -46,6 +46,7 @@ img {
     line-height: 27px;
     text-transform: uppercase;
     cursor: pointer;
+    color: #fff
 }
 .content__title {
     @include fz(90);
@@ -196,15 +197,50 @@ img {
     .btn-blue {
         background-color: #5585a2;            
         box-shadow: 2px 0px 5px #000;
-        text-transform: uppercase;
-        color: #fff;
+        text-transform: uppercase;        
         &:hover {
             background-color: #155279;
             }         
     }
 }
-
-
+/*subscribe*/
+.subscribe {
+    background: url(../images/bgi-berry.png) center right/cover no-repeat;
+    padding: 145px 0 160px 0;
+    .subscribe-content__inner {
+        width: 50%;
+        margin-bottom: 25px;
+        .subscribe__title {
+            font-weight: 700;
+            @include fz(40);
+            line-height: 27px;
+            margin-bottom: 30px;
+        }
+    }
+    .subscribe-form_textarea {
+        width: 570px;
+        height: 55px;
+        color: #929292;
+        font-weight: 300;
+        @include fz(15);
+        line-height: 27px;
+        padding: 20px 16px;
+        margin-right: 25px;
+        &:focus {
+            font-weight: 700;
+            border: 2px solid #000;
+        }            
+    }
+    .btn-green {
+        background-color: #96b92c;           
+        box-shadow: 2px 0px 5px #000;
+        width: 170px;
+        &:hover {
+            background-color: #5f7a0b;
+        }
+    }        
+}
+/*blog*/
 
 
 
