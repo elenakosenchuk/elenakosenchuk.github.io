@@ -11,12 +11,22 @@
     font-size: 17px;
   }
 
-  .subscribe .container {
-    padding-left: 50px;
+  .subscribe {
+    padding: 50px 20px;
   }
-  .subscribe .subscribe-content__inner {
+  .subscribe .container .subscribe-content__inner {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 70px;
+    border-radius: 20px;
+    padding: 10px 10px 10px 20px;
+  }
+  .subscribe .container .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .subscribe .container .subscribe-form .subscribe-form_textarea {
+    width: 80%;
   }
 }
 @media screen and (max-width: 870px) {
@@ -33,8 +43,8 @@
     text-align: center;
   }
 
-  .subscribe .subscribe-form_textarea {
-    width: 400px;
+  .subscribe .subscribe-content__inner {
+    width: 90%;
   }
 }
 @media screen and (max-width: 810px) {
@@ -87,23 +97,6 @@
   .gallery_bottom_pic {
     width: calc(50% - 10px);
   }
-
-  .subscribe {
-    padding: 30px 0;
-  }
-  .subscribe .subscribe-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .subscribe .subscribe-form .subscribe-form_textarea {
-    margin-bottom: 20px;
-  }
-}
-@media screen and (max-width: 680px) {
-  .subscribe .subscribe-content__inner {
-    width: 80%;
-  }
 }
 @media screen and (max-width: 600px) {
   .about-content__img {
@@ -125,13 +118,6 @@
     height: 50%;
   }
 }
-.subscribe .container {
-  padding-left: 15px;
-}
-.subscribe .container .subscribe-form_textarea {
-  width: 350px;
-}
-
 @media screen and (max-width: 450px) {
   .content__title--white {
     font-size: 40px;
@@ -150,7 +136,7 @@
 
   .subscribe .subscribe-content__inner {
     background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .subscribe .subscribe-content__inner .subscribe__title {
     font-size: 26px;
@@ -168,12 +154,5 @@
   .services .item-planet .planet {
     overflow: hidden;
     vertical-align: middle;
-  }
-
-  .subscribe .subscribe-content__inner {
-    padding: 10px;
-  }
-  .subscribe .subscribe-form .subscribe-form_textarea {
-    width: 80%;
   }
 }

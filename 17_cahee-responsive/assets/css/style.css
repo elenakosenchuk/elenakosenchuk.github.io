@@ -230,7 +230,7 @@ img {
 /*subscribe*/
 .subscribe {
   background: url(../images/bgi-berry.png) center right/cover no-repeat;
-  padding: 145px 0 160px 0;
+  padding: 145px 0 165px 0;
 }
 .subscribe .subscribe-content__inner {
   width: 50%;
@@ -266,6 +266,113 @@ img {
 }
 
 /*blog*/
+.blog {
+  background-color: #b07cf7;
+  padding: 120px 0 120px 0;
+}
+.blog .blog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.blog .blog-content__inner {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto 40px;
+  color: #fff;
+}
+.blog .blog-content__inner .content__title--white {
+  margin-bottom: 60px;
+}
+.blog .articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+.blog .articles .article {
+  position: relative;
+  transition: all 0.5s ease;
+  color: #fff;
+}
+.blog .articles .article:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.blog .articles .article:hover .date {
+  top: 30px;
+  left: 30px;
+  z-index: 20;
+  opacity: 0.8;
+}
+.blog .articles .article .picture {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.blog .articles .article .picture:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(180deg, #DFDFDD03 59%, #010303FA 96%);
+  opacity: 1.1;
+}
+.blog .articles .article .picture .pic {
+  width: 100%;
+  box-shadow: 2px 5px 20px 4px #6a4b95;
+}
+.blog .articles .article .article_content {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 30px;
+  line-height: 25px;
+  padding-bottom: 5px;
+}
+.blog .articles .article .article_content h5 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.blog .articles .article .article_content p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+.blog .articles .article .date {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  font-weight: 700;
+  border-radius: 4px;
+  line-height: 25px;
+  font-size: 2rem;
+  background-color: #494f5a;
+  text-transform: uppercase;
+  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  transition: all 0.5s ease;
+}
+.blog .articles .article .date span {
+  font-size: 1.3125rem;
+}
+.blog .btn-red {
+  background-color: #f72b3b;
+  box-shadow: 0px 3px 5px 2px #6a4b95;
+}
+.blog .btn-red:hover {
+  background-color: #9e0202;
+}
+
 .footer {
   width: 100%;
   height: 100px;
