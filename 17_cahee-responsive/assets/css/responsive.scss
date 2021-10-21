@@ -17,6 +17,9 @@
         }
     }
     .subscribe {
+        .container {
+            padding-left: 50px;
+        }
         .subscribe-content__inner {
             background-color: rgb(255, 255, 255, .5);
             border-radius: 70px;
@@ -46,7 +49,10 @@
 
 @media screen and (max-width:810px) {
     .services {
-        padding-top: 0px;    
+        padding-top: 0px;
+        &:before {
+            opacity: .5;
+        }       
         .services-content {
             display: flex;                        
             flex-direction: column-reverse;
@@ -106,8 +112,7 @@
     }
 }
 @media screen and (max-width:680px) {
-    .subscribe {
-        background: none;
+    .subscribe {        
         .subscribe-content__inner {
             width: 80%;        
         }
@@ -122,28 +127,36 @@
         flex-basis: 70%;            
 
     }
-    .services {        
+    .services {         
     .services-content {
-        background: none;
         .services-list {
-            width: 100%;
-            .services-list__item {
-                height: 40px;
+            width: 90%;                     
+            .services-list__item {                                                
                 .services-list__item--text {
-                    width: 85%;
-                    padding: 5px 0;                   
+                    width: 85%;                                       
                 }
                 .services-list__item--icon {
                     width: 15%;
                     height: 50%;                                                          
-                }                  
-            }
+                }
+                                                     
+            }         
+            
                                  
-        }  
-       
-        }
-    }  
+        }        
+               
+    }
 }
+    }
+    .subscribe {
+        .container {
+            padding-left: 15px;
+            .subscribe-form_textarea {
+                width: 350px;
+            }
+        }
+    }
+
 @media screen and (max-width:450px) {
     .content__title--white {
         font-size: 40px;                 
@@ -165,19 +178,37 @@
                 font-size: 26px;
             }                    
         }
-        .subscribe-form_textarea {
-            width: 300px;
-        }
+        
     }
     
 }
 @media screen and (max-width:400px) {
     .services {
-        .planet {
-            padding: 0;
-            overflow: hidden;
-            font-size: 14px;
+        .services-content {
+            .services-list {
+                .item-planet {
+                    height: 80px;                             
+                    padding: 0 5px;
+                }
+            }
+            .services-title {
+                margin-bottom: 5px;                
+            }
         }
+    }
+    .services .item-planet .planet {
+        overflow: hidden;
+        vertical-align: middle;        
+    }
+    .subscribe {
+        .subscribe-content__inner {
+            padding: 10px;
+        }
+        .subscribe-form {
+        .subscribe-form_textarea {
+            width: 80%;
+    }
+}
     }
     
 }

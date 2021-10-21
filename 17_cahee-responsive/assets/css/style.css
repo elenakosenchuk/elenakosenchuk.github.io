@@ -95,6 +95,19 @@ img {
 /*services*/
 .services {
   background-color: #70bfff;
+  position: relative;
+}
+.services:before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+  z-index: 1;
 }
 .services .services-content {
   background: url(../images/bgi-tomato.png) center right no-repeat;
@@ -103,9 +116,12 @@ img {
   align-items: center;
   flex-wrap: wrap;
   padding: 180px 0 130px 95px;
+  position: relative;
 }
 .services .services-content .services-list {
   width: 37.5%;
+  position: relative;
+  z-index: 2;
 }
 .services .services-content .services-list .services-list__item {
   width: 100%;
@@ -146,6 +162,7 @@ img {
   color: #fff;
   position: relative;
   padding-bottom: 100px;
+  z-index: 2;
 }
 
 /*gallery*/
