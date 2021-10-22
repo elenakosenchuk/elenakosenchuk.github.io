@@ -113,6 +113,15 @@
     box-shadow: none;
   }
 }
+@media screen and (max-width: 666px) {
+  #main_menu {
+    display: none;
+  }
+
+  #hamburger_menu {
+    display: block;
+  }
+}
 @media screen and (max-width: 600px) {
   .about-content__img {
     flex-basis: 30%;

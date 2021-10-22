@@ -12,6 +12,54 @@
 </head>
 
 <body>
+    <div id="mobile_menu_wrap">
+        <div class="sidemenu_top">
+            <div class="mobile_logo">
+                <a href="#"><img src="assets/images/logo.png" alt="Site Logo"></a>
+            </div>
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+        </div>
+        <nav class="sidemenu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="page_overlay"></div>
+
+    <header>
+        <div class="container header-container">
+            <div id="logo"><a href="#"><img src="assets/images/logo.png" alt="Site Logo"></a></div>
+            <nav id="main_menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <div id="hamburger_menu">
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                  </button>
+            </div>
+        </div>
+    </header>
+
+
     <main>
         <section class="about">
             <div class="container">
@@ -156,9 +204,18 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/plugins/styler/jquery.formstyler.min.js"></script>
     <script>
-        $(function() {
+    $(function() {
+
+            $(".hamburger, #page_overlay").on('click', function(){
+                $(".hamburger").toggleClass("is-active");
+                $("body").toggleClass("open");
+            });
+
+
             $('input, select').styler();
+
             $(window).on('scroll', function(){
+                
                 if($(window).scrollTop()>0){
                     if(!$("header").hasClass("scrolled")){
                         $("header").addClass("scrolled");
@@ -168,7 +225,9 @@
                         $("header").removeClass("scrolled");
                     }
                 }
+
             });
+
         });
     </script>
 </body>
