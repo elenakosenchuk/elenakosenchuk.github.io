@@ -61,6 +61,16 @@
 
 
     <main>
+        <section class="white-section">
+            <div class="container white-container">
+                <div class="content-block__item content-block__item--white">
+                    <h2 class="content__title--small">Fresh Life</h2>
+                    <p class="content__text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                    <button class="btn btn-orange">GET FREE NOW</button>
+                </div>
+            </div>
+        </section>
+
         <section class="about">
             <div class="container">
                 <div class="about-content">
@@ -215,7 +225,7 @@
             $('input, select').styler();
 
             $(window).on('scroll', function(){
-                
+
                 if($(window).scrollTop()>0){
                     if(!$("header").hasClass("scrolled")){
                         $("header").addClass("scrolled");

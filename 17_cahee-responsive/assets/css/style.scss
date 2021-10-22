@@ -196,6 +196,38 @@ main {
           transform: translate3d(0, -20px, 0) rotate(-90deg); }
 }
 
+/*white-section*/
+.white-section {
+    background: url(../images/bgi-1-2.jpg) right top/cover no-repeat;
+    height: 100vh;    
+    .white-container {
+        // background: url(../images/bgi-1-2.jpg) center center/cover no-repeat;        
+        padding: 200px 0 400px 0;
+        .content-block__item--white {            
+            width: 35%;
+            .content__title--small {
+                @include fz(60);
+                font-weight: 900;
+                line-height: 25px;
+                margin-bottom: 40px;
+            }
+            .content__text {
+                margin-bottom: 35px;
+            }
+            .btn-orange {
+                background-color: #ff6033;
+                color: #fff;
+                box-shadow: 0px 4px 5px 1px #827D7A;
+                margin-bottom: 400px;
+                &:hover {
+                    background-color: #aa2804;
+                    box-shadow: 0px 2px 2px 1px #827D7A;
+                    }
+            }
+        }
+    }
+}
+
 /*about*/
 .about {
     background-color: #00b0b0;

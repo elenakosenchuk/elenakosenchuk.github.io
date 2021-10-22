@@ -296,6 +296,37 @@ main {
   transform: translate3d(0, -20px, 0) rotate(-90deg);
 }
 
+/*white-section*/
+.white-section {
+  background: url(../images/bgi-1-2.jpg) right top/cover no-repeat;
+  height: 100vh;
+}
+.white-section .white-container {
+  padding: 200px 0 400px 0;
+}
+.white-section .white-container .content-block__item--white {
+  width: 35%;
+}
+.white-section .white-container .content-block__item--white .content__title--small {
+  font-size: 3.75rem;
+  font-weight: 900;
+  line-height: 25px;
+  margin-bottom: 40px;
+}
+.white-section .white-container .content-block__item--white .content__text {
+  margin-bottom: 35px;
+}
+.white-section .white-container .content-block__item--white .btn-orange {
+  background-color: #ff6033;
+  color: #fff;
+  box-shadow: 0px 4px 5px 1px #827D7A;
+  margin-bottom: 400px;
+}
+.white-section .white-container .content-block__item--white .btn-orange:hover {
+  background-color: #aa2804;
+  box-shadow: 0px 2px 2px 1px #827D7A;
+}
+
 /*about*/
 .about {
   background-color: #00b0b0;
