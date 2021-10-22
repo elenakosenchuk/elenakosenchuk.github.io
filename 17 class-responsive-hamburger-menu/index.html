@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+</head>
+<body>
+    <div id="mobile_menu_wrap">
+        <div class="sidemenu_top">
+            <div class="mobile_logo">
+                <a href="#">LOGO</a>
+            </div>
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+        </div>
+        <nav class="sidemenu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="page_overlay"></div>
+
+    <header>
+        <div class="container">
+            <div id="logo"><a href="#">LOGO</a></div>
+            <nav id="main_menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <div id="hamburger_menu">
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                  </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <section id="about">
+        <div class="container">
+            <div class="title">About Us</div>
+            <div class="wrapper">
+                <div class="pic_wrap">
+                    <img src="assets/images/1234.jpg" alt="">
+                </div>
+                <div class="text_wrap">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quam doloribus expedita assumenda magnam quod suscipit, molestias nostrum atque odit et, ad repudiandae asperiores? Nihil beatae ducimus praesentium excepturi minus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="title">Services</div>
+
+            <ul class="services_list">
+                <li>
+                    <div class="services_pic">
+                        <img src="assets/images/1234.jpg" alt="">
+                    </div>
+                    <div class="services_text">
+                        <h3>Services 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, ex. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, dolorem?</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="services_pic">
+                        <img src="assets/images/1234.jpg" alt="">
+                    </div>
+                    <div class="services_text">
+                        <h3>Services 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="services_pic">
+                        <img src="assets/images/1234.jpg" alt="">
+                    </div>
+                    <div class="services_text">
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, ex.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="chess_block">
+        <div class="container">
+            <div class="chess_wrapper">
+                <div class="chess_cell">1</div>
+                <div class="chess_cell">2</div>
+                <div class="chess_cell">3</div>
+                <div class="chess_cell">4</div>
+                <div class="chess_cell">5</div>
+                <div class="chess_cell">6</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    $(function (){
+        $(".hamburger, #page_overlay").on('click', function(){
+            $(".hamburger").toggleClass("is-active");
+            $("body").toggleClass("open");
+        });
+    });
+</script>
+</body>
+</html>
