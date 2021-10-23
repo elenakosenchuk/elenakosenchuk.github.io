@@ -30,7 +30,7 @@
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -46,7 +46,7 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
             <div id="hamburger_menu">
@@ -105,34 +105,29 @@
                     <h2 class="content__title content__title--white services-title">Our Services</h2>                
                 </div>
             </div>
-        </section>
+        </section>        
 
         <section class="gallery">
             <div class="container">
                 <div class="gallery-content__inner">                        
                     <h2 class="content__title">Gallery</h2>                      
                     <p class="content__text">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                                           
-                </div>
-                <div class="gallery_top">
+                </div>                
+                <div class="gallery_grid">
                     <div class="pic big_pic">
-                        <img class="w66" src="assets/images/gallery-60.jpg" alt="Gallery picture">
-                    </div>
-                    <div class="top_pics_wrap">
+                        <img class="photo w66" src="assets/images/gallery-60.jpg" alt="Gallery picture">
+                    </div>                    
                         <div class="pic">
-                            <img class="w33" src="assets/images/gallery-30-1.jpg" alt="Gallery picture">
+                            <img class="photo w33" src="assets/images/gallery-30-1.jpg" alt="Gallery picture">
                         </div>
                         <div class="pic">
-                            <img class="w33" src="assets/images/gallery-30-2.jpg" alt="Gallery picture">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery_bottom">
+                            <img class="photo w33" src="assets/images/gallery-30-2.jpg" alt="Gallery picture">
+                        </div>               
                     <div class="pic">
-                        <img class="w50" src="assets/images/gallery-50-1.jpg" alt="Gallery picture">
+                        <img class="photo w50" src="assets/images/gallery-50-1.jpg" alt="Gallery picture">
                     </div>
                     <div class="pic">
-                        <img class="w50" src="assets/images/gallery-50-2.jpg" alt="Gallery picture">
+                        <img class="photo w50" src="assets/images/gallery-50-2.jpg" alt="Gallery picture">
                     </div>
                 </div>
                 <div class="button">                
@@ -147,7 +142,7 @@
                     <h2 class="subscribe__title">Subscribe To Us</h2>                      
                     <p class="content__text">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                                           
                 </div>
-                <form class="subscribe-form" action="#" method="post">
+                <form class="subscribe-form" action="#" method="post" target="_blank">
                     <input class="subscribe-form_textarea" type="email" name="email" value="" placeholder="Your email adress...">
                     <button class="btn btn-green" type="submit">Subscribe</button>
                 </form>
@@ -194,20 +189,49 @@
                 </div>
             </div>
             </div>
+        </section>
 
+        <section class="main-contact">
+            <div class="container">
+                <div class="contact-title">
+                    <h2 class="content__title">Contact</h2>
+                    <p class="content__text">For new projects, ideas, business or anything
+                        you'd like to discuss, contact with me!</p>
+                </div>
+                
+                <div class="main-contact__form">
+                    <form class="contact-form" action="#" method="post" target="_blank">
+                        <ul class="contact-list">
+                            <li class="contact-list__item"><input class="contact-list_textarea" type="text" name="name" value="" placeholder="Auskteez Tran"></li>
+                            <li class="contact-list__item"><input class="contact-list_textarea" type="email" name="email" value="" placeholder="Your email..."></li>
+                            <li class="contact-list__item"><input class="contact-list_textarea" type="tel" name="phone" value="" placeholder="Your phone number..."></li>
+                            <li class="contact-list__item contact-list__item--big"><textarea class="contact-list_textarea" type="text" name="message">Your messge...</textarea></li>
+                        </ul>
+                        <button class="btn btn-green" type="submit">Send</button>
+                    </form>
+
+                    <div class="contact-data">
+                        <p class="contact-data_item contact-data_item--bold">Address</p>
+                        <p class="contact-data_item contact-data_item--light">123 City name, Street, City, Country</p>
+                        <p class="contact-data_item contact-data_item--bold">Email</p>
+                        <p class="contact-data_item contact-data_item--light">cahee@domain.com</p>
+                        <p class="contact-data_item contact-data_item--bold">Phone</p>
+                        <p class="contact-data_item contact-data_item--light">+012 345 6789</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-
-
-
         <footer class="footer">
+            <div class="container">
             <div class="footer-content">
                 <p class="footer-content__text">&copy; 2015 Company. All rights reserved</p>
                 <div class="footer-content__logo image">
-                    <img class="image__logo--small" src="assets/images/logo-small.png" alt="Logo">
+                   <a href="#"><img class="image__logo--small" src="assets/images/logo-small.png" alt="Logo"></a>
                 </div>
                 <p class="footer-content__text footer-content__text--small">Made with <span class="footer-content__text--pink">love</span> by Auskteez</p>
             </div>
+        </div>
         </footer>
     
 

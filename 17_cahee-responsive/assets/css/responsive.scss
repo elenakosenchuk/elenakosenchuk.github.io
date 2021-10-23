@@ -1,7 +1,19 @@
 @media screen and (max-width:1200px) {
     .content__title--white {
        font-size: 60px;
-    }    
+    }
+    .white-section .white-container .content-block__item--white {
+            width: 50%;
+        }
+    .main-contact .contact-title {
+        width: 50%;
+    }
+    .main-contact .main-contact__form {
+        gap: 70px;
+        .contact-form {
+            width: calc(50% - 35px);
+        }
+    }
 }
 @media screen and (max-width:1000px) {
     .services {
@@ -38,6 +50,14 @@
 }
 
 @media screen and (max-width:870px) {
+    .white-section {
+        &:before {
+            opacity: .7;
+        }             
+    }
+    .white-section .white-container .content-block__item--white {
+        width: 70%;
+    }      
     .about-content {
         padding-bottom: 10px;
         display: flex;
@@ -55,15 +75,28 @@
             width: 90%;            
         }
     }
-    .gallery {
-        padding: 70px;
-        .gallery-content__inner {
-            width: 90%;
+    
+    .blog {
+        padding: 70px 0;
+        .blog-content__inner {
+            width: 70%;
+            .content__title--white {
+                margin-bottom: 40px;
+            }
         }
-    }
+    }  
 }
 
 @media screen and (max-width:810px) {
+    #main_menu {
+        display: none;
+    }
+    #hamburger_menu {
+        display: block;
+    }
+    .white-section {
+        padding: 150px 0;
+    }
     .services {
         padding-top: 0px;
         &:before {
@@ -92,48 +125,64 @@
                     padding: 20px;                 
                 }              
         
-        }
+            }
     
-    }
-    .gallery_top {
-        flex-wrap: wrap;
-        .big_pic {
-            width: 100%;
-            margin-bottom: 30px;
-            .w66 {
-                box-shadow: none;
+        }
+    .gallery {
+        &_grid {
+            grid-template-columns: (50% 50%) - 15px;
+            .big_pic {
+                grid-area: span 1 / span 2;
+            }
+            .pic:last-child {
+                grid-column: 2/3;
             }
         }
-        .top_pics_wrap {            
-            width: 100%;
-            flex-direction: row;
-            .pic {
-                width: calc(50% - 10px);
-                .w33 {
-                    box-shadow: none;
-                }
+        .gallery-content__inner {
+            width: 90%;
+            .content__title {
+                font-size: 60px;
             }
         }
     }
-    .gallery_bottom {
-        .pic {
-            width: calc(50% - 10px);
-            .w50 {
-                box-shadow: none;
+    
+    .blog {
+        .articles {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+    .main-contact {
+        padding-top: 50px;
+        .contact-title {
+            width: 90%;
+            .content__title {
+                font-size: 60px;
+            }
+        }
+        .main-contact__form {
+            flex-direction: column;
+            gap: 50px;
+            .contact-form {
+                width: 90%;
             }
         }
     }    
 }
-@media screen and (max-width:666px) {
-    #main_menu {
-        display: none;
-    }
-    #hamburger_menu {
-        display: block;
+@media screen and (max-width:650px) {
+    .footer {
+        height: 170px;
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        }
     }
 }
 
 @media screen and (max-width:600px) {
+    .white-section .white-container .content-block__item--white .content__title--small  {
+        font-size: 40px;
+    }
     .about-content__img {
         flex-basis: 30%;                             
     }
@@ -160,41 +209,20 @@
                
         }
     }
-    .gallery {
-        .gallery-content__inner {
-            width: 100%;
-            margin-bottom: 15px;
-        .content__title {
-            font-size: 60px;
-            margin-bottom: 30px;
-        }
-    }
-        .gallery_top {
-            margin-bottom: 15px;
-            .big_pic {
-                margin-bottom: 15px;
-            }
-            .top_pics_wrap {
-                gap: 15px;
-            }
+    
+    .blog {       
+        .blog-content__inner {
+            width: 90%;
         }
     }
 }
     
 
-@media screen and (max-width:450px) {
+@media screen and (max-width:450px) {    
     .content__title--white {
         font-size: 40px;                 
     }    
-    .gallery_bottom .pic .gallery_top .top_pics_wrap .pic {
-        width: 100%;
-    }
-    .gallery_bottom_pic {
-        flex-wrap: wrap;
-        &:first-child {
-            margin-bottom: 20px;
-        }
-    }
+    
     .subscribe {
         .subscribe-content__inner {
             background-color: rgb(255, 255, 255, .7);
