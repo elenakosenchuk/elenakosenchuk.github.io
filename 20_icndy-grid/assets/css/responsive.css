@@ -1,0 +1,21 @@
+@media screen and (max-width: 1200px) {
+  .section-top {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .section-top {
+    grid-template: repeat(3, 1fr)/50% 50%;
+  }
+  .section-top .pic:last-child {
+    grid-area: span 1/span 2;
+  }
+}
+@media screen and (max-width: 550px) {
+  .section-top {
+    grid-template: repeat(6, 1fr)/50% 50%;
+  }
+  .section-top .pic {
+    grid-area: span 2/span 2;
+  }
+}

@@ -36,11 +36,13 @@ img {
 
 .container {
   width: 90%;
-  max-width: 1170px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
 .section-top {
+  width: 90%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 55px;
@@ -55,7 +57,7 @@ img {
 
 .section-bottom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 .section-bottom .pic:after {
   background-color: rgba(0, 0, 0, 0.7);
