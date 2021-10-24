@@ -106,7 +106,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 html,
@@ -182,7 +182,6 @@ header {
   top: 0;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 10;
-  transition: all 0.2s ease;
 }
 header .header-container {
   height: 100%;
@@ -232,7 +231,6 @@ main {
   background-color: #ff6033;
   top: 0;
   left: 10px;
-  transition: all 0.2s ease;
 }
 #main_menu ul li a:hover {
   text-decoration: none;
@@ -324,7 +322,10 @@ main {
 
 /*white-section*/
 .white-section {
-  background: url(../images/bg-1.jpg) bottom center/cover no-repeat;
+  background-color: #fff;
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   padding: 280px 0;
   position: relative;
@@ -338,7 +339,6 @@ main {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.7);
-  transition: all 0.5s ease;
   z-index: 1;
 }
 .white-section .white-container {
@@ -410,11 +410,12 @@ main {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: all 0.5s ease;
   z-index: 1;
 }
 .services .services-content {
-  background: url(../images/bgi-tomato.png) center right no-repeat;
+  background-color: #70bfff;
+  background-position: center right;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -449,6 +450,9 @@ main {
 .services .services-content .services-list .services-list__item .services-list__item--link:hover {
   background-color: #bdbaba;
 }
+.services .services-content .services-list .services-list__item .services-list__item--link:focus {
+  border: 2px solid #666;
+}
 .services .services-content .services-list .services-list__item .services-list__item--text {
   border-right: 1px solid #9d9d9d;
   width: calc(76% - 1px);
@@ -474,8 +478,9 @@ main {
   padding: 120px 0;
 }
 .gallery_grid {
+  width: 90%;
   display: grid;
-  grid-template-columns: 50% 16% 34%-15px;
+  grid-template-columns: 50% 16% 34%;
   gap: 30px;
   margin-bottom: 50px;
 }
@@ -512,7 +517,10 @@ main {
 
 /*subscribe*/
 .subscribe {
-  background: url(../images/bgi-berry.png) center right/cover no-repeat;
+  background-color: #fff;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 145px 0 165px 0;
 }
 .subscribe .subscribe-content__inner {
@@ -615,7 +623,7 @@ main {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  z-index: 30px;
+  z-index: 30;
   line-height: 25px;
 }
 .blog .articles .article .article_content h5 {
@@ -656,7 +664,10 @@ main {
 }
 
 .main-contact {
-  background: url(../images/bgi-form.png) center center/cover no-repeat;
+  background-color: #aed8fa;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 120px 0 50px 0;
 }
 .main-contact .contact-title {
