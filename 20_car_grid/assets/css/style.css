@@ -1,0 +1,130 @@
+@font-face {
+  font-family: HansKendrik;
+  src: url(../fonts/HansKendrick-Regular.woff);
+  src: url(../fonts/HansKendrick-Regular.woff2);
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Raleway";
+  font-size: 1rem;
+  min-width: 350px;
+  background-color: #e2e7ec;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:focus {
+  border: 2px solid transparent;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1.375rem;
+  line-height: 30px;
+  padding: 0 0 10px 27px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 30px;
+  color: #818181;
+  padding: 20px 25px 0;
+  margin-bottom: 5px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 85px 0 25px;
+}
+.container .main-content {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 20px;
+}
+.container .main-content .w-66 {
+  position: relative;
+  grid-area: span 1/span 2;
+}
+.container .main-content .w-66:after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+  opacity: 0.1;
+}
+.container .main-content .w-66 .content-w-66 {
+  position: absolute;
+  z-index: 30;
+  bottom: 35px;
+  left: 43px;
+  width: 70%;
+  letter-spacing: 0.4px;
+}
+.container .main-content .w-66 .content-w-66 h2 {
+  color: #fff;
+  font-size: 1.875rem;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+.container .main-content .w-66 .content-w-66 p {
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+.container .main-content .w-66 .big-car {
+  position: relative;
+}
+.container .main-content .w-33 {
+  grid-area: span 1/span 1;
+  background-color: #fff;
+  position: relative;
+  padding-bottom: 125px;
+}
+.container .main-content .w-33 .icon {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
+footer .load {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+footer p {
+  display: inline-block;
+  padding-left: 15px;
+}
