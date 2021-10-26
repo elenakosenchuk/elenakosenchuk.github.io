@@ -37,9 +37,8 @@ h1 {
   text-align: center;
 }
 .container .main-lesson {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 .container .main-lesson .lesson-block {
@@ -64,8 +63,6 @@ h1 {
   margin-bottom: 5px;
   width: 98%;
   height: 30px;
-  display: flex;
-  justify-content: space-around;
 }
 .container .main-lesson .lesson-block .lesson-block__list .lesson-list__item--link {
   color: #000000;

@@ -30,9 +30,8 @@ h1 {
     margin: 0 auto;
     text-align: center;    
     .main-lesson {        
-        display: flex;        
-        flex-wrap: wrap;
-        justify-content: space-between;              
+        display: grid;    
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));                
         gap: 20px;
         .lesson-block {
             width: 200px;
@@ -55,9 +54,7 @@ h1 {
                 .lesson-list__item {
                     margin-bottom: 5px;                    
                     width: 98%;
-                    height: 30px;
-                    display: flex;
-                    justify-content: space-around;
+                    height: 30px;                    
                     &--link {
                         color: #000000;
                         font-size: 18px;
