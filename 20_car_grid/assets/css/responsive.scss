@@ -1,11 +1,15 @@
-@media screen and (max-width:1200px) {
-//     .container {
-//         padding-bottom: 85px; 
-//     .main-content {
-//         grid-template-columns: 50% 50%;
-//     }
-// }
-}
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1000px) {
+    main .main-content {
+        -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;        
+    }
     
+}
+@media screen and (max-width:660px) {
+    main {
+        padding: 45px 15px 0 0;
+        .main-content .card {
+        grid-area: span 1 / span 2;
+        }
+    }    
 }

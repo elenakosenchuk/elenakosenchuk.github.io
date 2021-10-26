@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
 @media screen and (max-width: 1200px) {
   .content__title--white {
     font-size: 60px;
@@ -35,8 +41,15 @@
     padding: 10px 10px 10px 20px;
   }
   .subscribe .container .subscribe-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 20px;
   }
@@ -55,8 +68,15 @@
 
   .about-content {
     padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .about-content .about-content__img {
@@ -100,8 +120,15 @@
     opacity: 0.5;
   }
   .services .services-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 0;
   }
@@ -124,12 +151,15 @@
   }
 
   .gallery_grid {
+    -ms-grid-columns: 50% 50%;
     grid-template-columns: 50% 50%;
   }
   .gallery_grid .big_pic {
     grid-area: span 1/span 2;
   }
   .gallery_grid .pic:last-child {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2/3;
   }
   .gallery .gallery-content__inner {
@@ -140,7 +170,11 @@
   }
 
   .blog .articles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
@@ -154,6 +188,9 @@
     font-size: 60px;
   }
   .main-contact .main-contact__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 50px;
   }
@@ -166,6 +203,9 @@
     height: 170px;
   }
   .footer .footer-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
   }
@@ -176,10 +216,12 @@
   }
 
   .about-content__img {
+    -ms-flex-preferred-size: 30%;
     flex-basis: 30%;
   }
 
   .about-content__inner {
+    -ms-flex-preferred-size: 70%;
     flex-basis: 70%;
   }
 
