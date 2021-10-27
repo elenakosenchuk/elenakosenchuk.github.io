@@ -7,9 +7,18 @@
 }
 @media screen and (max-width:660px) {
     main {
-        padding: 45px 15px 0 0;
-        .main-content .card {
-        grid-area: span 1 / span 2;
-        }
+        padding: 45px 0 0 0;
+        .main-content {
+            grid-template-columns: 100%;
+            .big_card {
+                grid-area: span 1 / span 1;
+                overflow: hidden;
+                width: 110%;
+                .picture img {
+                    position: relative;
+                    right: 10%;
+                }
+            }
+        }        
     }    
 }
