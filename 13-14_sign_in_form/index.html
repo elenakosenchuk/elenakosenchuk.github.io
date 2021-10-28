@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="assets/plugins/styler/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/plugins/styler/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="container">
+        <ul class="form_links links_top">
+            <li><a href="#" target="_blank">Sign in</a></li>
+            <li><a href="#" target="_blank">Join us</a></li>
+        </ul>
+        <form action="#" method="post" target="_blank">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="pass" id="password">
+            <label class="check"> <input type="checkbox" name="signin" value="sighin"> Keep me signed in</label>
+            <button class="btn" type="submit">Sign in</button>
+        </form>
+        <ul class="form_links links_bottom">
+            <li><a href="#" target="_blank">Forgot password</a></li>
+            <li><a href="#" target="_blank">Create an account</a></li>            
+        </ul>
+    </div>
+    </div>    
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/styler/jquery.formstyler.min.js"></script>
+    <script>
+        $(function() {
+            $('input, select').styler();
+        });
+    </script>
+
+</body>
+</html>
