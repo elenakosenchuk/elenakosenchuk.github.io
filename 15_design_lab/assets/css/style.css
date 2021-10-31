@@ -27,6 +27,9 @@ li {
 a {
   text-decoration: none;
 }
+a:focus {
+  border: 1px solid transparent;
+}
 
 img {
   vertical-align: top;
@@ -227,10 +230,19 @@ main .content .content__title .sprite_title {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+.works_list .works_list_item .works_link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
   background: linear-gradient(180deg, #b5b7b7 51%, #0d0d0d 100%);
   opacity: 0;
 }
-.works_list .works_list_item .works_link:hover {
+.works_list .works_list_item .works_link:hover:before {
   opacity: 0.7;
 }
 .works_list .works_list_item .works_link h4 {
@@ -240,6 +252,7 @@ main .content .content__title .sprite_title {
   font-size: 2.125rem;
   letter-spacing: 2px;
   position: absolute;
+  z-index: 10;
   bottom: 40px;
   left: 40px;
 }
@@ -295,6 +308,9 @@ main .content .contact_text {
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 2px;
+}
+.contact_link_wrapper .contact_link:hover {
+  background-color: #aaa4a4;
 }
 
 footer {
