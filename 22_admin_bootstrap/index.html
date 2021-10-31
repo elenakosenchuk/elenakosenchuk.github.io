@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left: 280px;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#">
+                <img src="assets/images/logo-min.png" alt="Logo">
+              </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,8 +50,8 @@
           </nav>
     </header>
 
-    <main style="height: calc(100vh - 75px)" class="d-flex">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <main style="height: calc(100vh - 76px);" class="d-flex">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark position-fixed top-0" style="width: 280px; height: 100vh;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" fill="#fff"><use xlink:href="assets/images/icons.svg#bootstrap"></use></svg>
           <span class="fs-4">Sidebar</span>
@@ -85,7 +88,14 @@
               Customers
             </a>
           </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <i class="fa fa-users me-2"></i>
+              Users
+            </a>
+          </li>
         </ul>
+
         <hr>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,7 +112,7 @@
         </div>
       </div>
 
-      <div class="content p-4">          
+      <div class="content p-4" style="margin-left: 280px;">          
           <div class="pb-3">
             <h1>Lorem ipsum dolor sit.</h1>
           <nav aria-label="breadcrumb">
@@ -112,97 +122,102 @@
               <li class="breadcrumb-item active" aria-current="page">Data</li>
             </ol>
           </nav>
-          </div>
+          </div>        
 
           <div class="row mb-4">
-              <div class="col-md-6-sn-12 col-lg-8">
+            <div class="col-md-6-sn-12 col-lg-6">
+              <div class="card">
+                <img src="assets/images/girls-min.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-md-6-sn-12 col-lg-6">              
                 <div class="card">
-                    <img src="assets/images/girls-min.jpg" class="card-img-top" alt="...">
+                    <img src="assets/images/last-car-min.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
-              </div>
-           
-              <div class="col-md-6-sn-12 col-lg-4">
-                <div class="col-md-6-sn-12 col-lg-8">
-                    <div class="card">
-                        <img src="assets/images/last-car-min.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                    </div>
-                      <div class="row mb-4">
-                          <div class="col">
-                            <div class="card">
-                                <div class="card-header">
-                                  Featured
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-striped">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-          <div class="row-mb-4">
-              <div class="col">
-                  <form action="#">
-                      <div class="card">
-                          <div class="card-header">Some form here</div>
-                          <div class="card-body">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                              </div>
-                          </div>
-                          <div class="card-footer">
-                              <button type="button">Submit</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
+                </div>
+            </div>
+              
 
-      </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="card">
+                      <div class="card-header">
+                        Featured
+                      </div>
+                      <div class="card-body">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash-alt me-2"></i>Remove</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td colspan="2">Larry the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row-mb-4">
+                <div class="col">
+                    <form action="#">
+                        <div class="card">
+                            <div class="card-header">Some form here</div>
+                            <div class="card-body">
+                              <div class="mb-3">
+                                  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <button type="submit" class="btn btn-success">Send</button>
+                                <button type="reset" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         
+        </div>
+          
     </main>
 
 
