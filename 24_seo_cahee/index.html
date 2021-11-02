@@ -244,13 +244,20 @@
                     </form>
 
                     <div class="contact-data">
-                        <p class="contact-data_item contact-data_item--bold">Address</p>
-                        <p class="contact-data_item contact-data_item--light">123 City name, Street, City, Country</p>
-                        <p class="contact-data_item contact-data_item--bold">Email</p>
-                        <p class="contact-data_item contact-data_item--light">cahee@domain.com</p>
-                        <p class="contact-data_item contact-data_item--bold">Phone</p>
-                        <p class="contact-data_item contact-data_item--light">+012 345 6789</p>
+                        <ul itemscope itemtype="https://schema.org/Organization">
+                            <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <p class="contact-data_item contact-data_item--bold">Address</p> 
+                                <p class="contact-data_item contact-data_item--light"><span itemprop="streetAddress">123 City name, Street,</span><span itemprop="addressLocality">City, Country</span></p>
+                            </li>
+                            <li>
+                                <p class="contact-data_item contact-data_item--bold">Email</p><a href="mailto:cahee@domain.com" class="contact-data_item contact-data_item--light" itemprop="email">cahee@domain.com</a>
+                            </li>
+                            <li>
+                                <p class="contact-data_item contact-data_item--bold">Phone</p><a href="tel:+0123456789" class="contact-data_item contact-data_item--light" itemprop="telephone">+012 345 6789</a>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
             </div>
         </section>
