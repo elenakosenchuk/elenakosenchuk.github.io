@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /en/pages/view/404
+Allow: /
+Host: https://github.com/elenakosenchuk/elenakosenchuk.github.io
 Sitemap: https://elenakosenchuk.github.io/24_seo_cahee/sitemap.xml
