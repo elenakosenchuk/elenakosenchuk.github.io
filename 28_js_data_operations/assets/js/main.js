@@ -120,13 +120,27 @@ function sameNumber2() {
     alert("There are not the same numbers here");   
 }
 
+function isMatched (num) {
+    num = parseInt(num);
+    let s, d, e;
+    s = parseInt(num/100);
+    d = parseInt((num % 100) / 10);
+    e = num % 10;
+    
+    if(s == d || s == e || d ==e) {
+        console.log('Match')
+    } else {
+        console.log('NOT match');
+    }
+}
+
 
 // Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
 
 function year() {
     let number = parseInt(prompt("Enter some year"));
     let kindYear;
-    if ((number % 400 == 0 || number % 4 == 0) && number % 100 != 0 ) {
+    if (number % 400 == 0 || (number % 4 == 0 && number % 100 != 0 )) {
         kindYear = "leap year";
     }
     else {
@@ -155,10 +169,7 @@ function palindrom() {
 
 // Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
 
-function convertor() {
-    // let dollar = parseInt(document.getElementById("usd").value);
-
-    // document.getElementById("quader").innerText = `Quder: ${result} sm2`;
+function convertor() {    
     let dollar = parseInt(prompt("Enter USD sum"));
     let currency = prompt("Choose currency EUR, UAH or AZN");
     let currency2 = currency.toUpperCase();
