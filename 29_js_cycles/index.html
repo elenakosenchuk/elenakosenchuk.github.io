@@ -10,7 +10,119 @@
     <link rel="stylesheet" href="assets/css/all.min.css">
 </head>
 <body>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 1</h5>
+              <p class="card-text">Подсчитать сумму всех чисел в заданном пользователем диапазоне.</p>
+              <button onclick="numbersSum()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 2</h5>
+              <p class="card-text">Запросить 2 числа и найти только наибольший общий делитель.</p>
+              <button onclick="dividerBoth()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Task 3</h5>
+                <p class="card-text">Запросить у пользователя число и вывести все делители этого числа.</p>
+                <button onclick="dividerAll()" type="button" class="btn btn-primary">Send number</button>
+              </div>
+            </div>
+          </div>
+      </div>
 
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 4</h5>
+              <p class="card-text">Определить количество цифр в введенном числе.</p>
+              <button onclick="numberTotal()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 5</h5>
+              <p class="card-text">Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.</p>
+              <button onclick="statistic()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Task 6</h5>
+                <p class="card-text">Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.</p>
+                <button onclick="calculator()" type="button" class="btn btn-primary">Send number</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 7</h5>
+              <p class="card-text">Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).</p>
+              <button onclick="numberMove()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 8</h5>
+              <p class="card-text">Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.</p>
+              <button onclick="weekDay()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Task 8(2)</h5>
+                <p class="card-text">Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.</p>
+                <button onclick="weekDay2()" type="button" class="btn btn-primary">Send number</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 9</h5>
+              <p class="card-text">Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.</p>
+              <button onclick="table()" type="button" class="btn btn-primary">Click</button>
+              <br>
+              <br>
+              <div id="result" class="card-text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Task 10</h5>
+              <p class="card-text">Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.</p>
+              <button onclick="guessNumber()" type="button" class="btn btn-primary">Send number</button>
+            </div>
+          </div>
+        </div>        
+      </div>
 
     
     <script src="assets/js/main.js"></script>

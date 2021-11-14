@@ -10,9 +10,9 @@ function numbersSum() {
             sum = sum + start;
             start++;            
         }
-        console.log(`Numbers sum: ${sum}`);
+        alert(`Numbers sum: ${sum}`);
     } else {
-        console.warn("Too big number");
+        alert("Too big number");
     }
 }
 
@@ -30,7 +30,7 @@ function dividerBoth() {
         }
         divider++;                
     }
-    console.log(maxDivider);   
+    alert(maxDivider);   
 }
 
 // 3.Запросить у пользователя число и вывести все делители этого числа.
@@ -44,7 +44,7 @@ function dividerAll() {
         }
         divider++;
     }
-    console.log(result);
+    alert(result);
 }
 // 4.Определить количество цифр в введенном числе.
 
@@ -55,7 +55,7 @@ function numberTotal() {
         number = Math.floor(number /10);
         total++;
     }
-    console.log(total);    
+    alert(total);    
 }
 
 // 5.Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
@@ -90,7 +90,7 @@ function statistic() {
             // }
             // continue;              
     }
-    console.log(`You enter: ${positive} positive numbers, ${negative} negative numbers, ${zero} zero, ${even} even numbers, ${odd} odd numbers.`)        
+    alert(`You enter: ${positive} positive numbers, ${negative} negative numbers, ${zero} zero, ${even} even numbers, ${odd} odd numbers.`)        
 }
 
 // 6.Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
@@ -115,9 +115,9 @@ function calculator() {
             result = num1 / num2;
         }
         else {
-            console.log("You enter an invalid sign");
+            alert("You enter an invalid sign");
         }
-        console.log(result);
+        alert(result);
         ask = confirm("Would you like to count?");
 
     } while(ask === true)
@@ -133,7 +133,7 @@ function numberMove() {
         number = (num1 - numTail) /10;
         num1 = numTail * 10**(num1Long-1) + number;        
     }
-    console.log(num1);
+    alert(num1);
 }
 
 // 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
@@ -177,10 +177,11 @@ function weekDay2() {
 function table() {
     let a = 2;
     let b = 1;
-    for(a=2; a<=9; a++){        
+    for(a=2; a<=9; a++){
         for(b=1; b<=10; b++) {
-            console.log(a + "*" + b + "=" + (a*b) + " ");
-        }            
+            document.getElementById('result').innerHTML += (a + "*" + b + "=" + (a*b) + " ");
+        }  
+        document.getElementById('result').innerHTML += "<br>";
     }
 }
 

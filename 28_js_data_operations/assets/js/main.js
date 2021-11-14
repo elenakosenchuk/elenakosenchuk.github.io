@@ -256,7 +256,7 @@ function date() {
     let maxMonth = 12;
     debugger;
     if(day < maxDay && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)) {
-        result = `Tommorow will be ${day + 1}.${month}.${year}`;
+        result = `Tommorow will be ${day + 1}.${month}.${year}`;        
     }
     else if(day == maxDay && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10)) {
         result = `Tommorow will be 1.${month + 1}.${year}`;
