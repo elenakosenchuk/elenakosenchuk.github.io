@@ -186,22 +186,23 @@ function table() {
 
 // 10.Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.
 
-function guess() {
-    let number = parseInt(prompt("Guess the number from 0 to 100"));
-    let min = 0;
-    let max = 100;
-    let N;
-    while(number != N) {
-        if (confirm(`Your mumber > 50?`)) {
-            N > 50;
+function guessNumber() {   
+    let start = 0;
+    let end = 100;    
+    confirm("Загадай число от 0 до 100");
+    debugger;
+    while(true) {
+        let guess = Math.round((start + end) /2);
+        let answ = prompt(`Ваше число > ${guess}, < ${guess} или = ${guess}?`);
+        if (answ == ">") {
+            start = Math.round(guess + 1);
         }
-        else if (confirm(`Your mumber < 50?`)) {
-            N < 50;
+        else if(answ == "<") {
+            end = Math.round(guess - 1);
         }
         else {
-            (confirm(`Your mumber = 50?`))
-            N = 50;
+            alert(`Ваше число ${guess}`);
+            break;
         }
     }
-
 }
