@@ -96,18 +96,112 @@ function statistic() {
 // 6.Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
 
 function calculator() {
-    let number1 = parseInt(prompt('Enter your number'));
-    let number2 = parseInt(prompt('Enter your number'));
-    let sign = prompt('Enter mathematical action');
-    let result;
-    let answer = true;
-    while(answer===false || !answer) {
-        result = number1 
-        answer = comfirm("Хочешь послушать сказку?");
+    let ask = false;
+    do {        
+        let num1 = parseInt(prompt("Enter first number"));
+        let num2 = parseInt(prompt("Enter second number"));
+        let sign = prompt("Enter mathematic action");
+        let result;
+        if(sign === "+" ) {
+            result = num1 + num2;            
+        }
+        else if(sign === "-") {
+        result = num1 - num2;
+        }
+        else if(sign === "*") {
+            result = num1 * num2;
+        }
+        else if(sign === "/") {
+            result = num1 / num2;
+        }
+        else {
+            console.log("You enter an invalid sign");
+        }
+        console.log(result);
+        ask = confirm("Would you like to count?");
+
+    } while(ask === true)
+}
+// 7.Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+function numberMove() {
+    let num1 = prompt("Enter your number");
+    let num2 = parseInt(prompt("How many digits to move?"));
+    let num1Long = parseInt(num1.length);    
+    for(i=0; i<num2; i++) {                
+        numTail = num1 % 10;
+        number = (num1 - numTail) /10;
+        num1 = numTail * 10**(num1Long-1) + number;        
+    }
+    console.log(num1);
+}
+
+// 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+
+function weekDay() {
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];  
+    let i = 0;
+    while (confirm(`Today is ${days[i]}. Would you like to see the next day?`)) {
+       i++;
+       if(i==7) {
+           i=0;
+       }
+    }   
+}
+
+function weekDay2() {    
+    while(confirm(`Today is Monday. Would you like to see the next day?`)) {
+        if (!confirm(`Today is Tuesday. Would you like to see the next day?`)) {  
+            break;
+        }
+        if (!confirm(`Today is Wednesday. Would you like to see the next day?`)) {  
+            break;
+        }
+        if (!confirm(`Today is Thursday. Would you like to see the next day?`)) {  
+            break;
+        } 
+        if (!confirm(`Today is Friday. Would you like to see the next day?`)) {  
+            break;
+        } 
+        if (!confirm(`Today is Saturday. Would you like to see the next day?`)) {  
+            break;
+        }
+        if (!confirm(`Today is Sunday. Would you like to see the next day?`)) {  
+            break;
+        }               
     }
 }
 
-// 7.Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
-// 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
 // 9.Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.
+
+function table() {
+    let a = 2;
+    let b = 1;
+    for(a=2; a<=9; a++){        
+        for(b=1; b<=10; b++) {
+            console.log(a + "*" + b + "=" + (a*b) + " ");
+        }            
+    }
+}
+
 // 10.Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.
+
+function guess() {
+    let number = parseInt(prompt("Guess the number from 0 to 100"));
+    let min = 0;
+    let max = 100;
+    let N;
+    while(number != N) {
+        if (confirm(`Your mumber > 50?`)) {
+            N > 50;
+        }
+        else if (confirm(`Your mumber < 50?`)) {
+            N < 50;
+        }
+        else {
+            (confirm(`Your mumber = 50?`))
+            N = 50;
+        }
+    }
+
+}
