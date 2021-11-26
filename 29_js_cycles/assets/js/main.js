@@ -136,6 +136,26 @@ function numberMove() {
     alert(num1);
 }
 
+// let num = parseInt(prompt("Enter number"));
+// let zdvig = parseInt(prompt("Enter move digits"));
+
+// const count = n=>{
+//     let r = 0;
+//     while(n>1){
+//         n = n/10;
+//         r++;
+//     }
+//     return r;
+// }
+
+// let part_1, part_2;
+// let k = Math.pow(10, zdvig);
+// let k = 10**zdvig;
+// part_1 = parseint(num/k);
+// part_2 = num%k;
+// let rez = part_2*(10**count(part_1))+part_1;
+// console.log(rez);
+
 // 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
 
 function weekDay() {
