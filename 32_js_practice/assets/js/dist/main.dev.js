@@ -80,11 +80,36 @@ function addToCart(name, qty, price) {
 function shoppingList() {
   var card_html = '';
 
-  for (var i = 0; i < CART.length; i++) {
-    card_html += "<li>".concat(CART[i].name, " ").concat(CART[i].price, " &times; ").concat(CART[i].qty, " = ").concat(CART[i].total, "</li>");
+  for (var _i = 0; _i < CART.length; _i++) {
+    card_html += "\n        <li>".concat(CART[_i].name, " ").concat(CART[_i].price, " &times; ").concat(CART[_i].qty, " = ").concat(CART[_i].total, "\n        <button class=\"btn btn-danger btn-sm\">Remove</button>\n        </li>");
   }
 
   document.getElementById("cart_list").innerHTML = card_html;
 }
 
 shoppingList();
+
+function productInBill(product) {
+  return "<div class=\"name\">".concat(product.name, " (").concat(product.qty, ")</div> <div class=\"price\">").concat(product.price, " pc</div> <div class=\"total\">").concat(product.total, "</div>");
+}
+
+function totalBill() {
+  var sum = 0;
+
+  for (i = 0; i < CART.length; i++) {
+    sum = sum + CART[i].total;
+  }
+
+  return sum;
+}
+
+function shoppingBill() {
+  var result = '';
+
+  for (i = 0; i < CART.length; i++) {
+    result += "\n        <li class=\"prod_item\">".concat(productInBill(CART[i]), "</li>");
+  }
+
+  result = result + "<li class=\"sum\"><div class=\"total_title\">Total sum:</div><div>".concat(totalBill(), "</div></li>");
+  document.getElementById("bill_list").innerHTML = result;
+}

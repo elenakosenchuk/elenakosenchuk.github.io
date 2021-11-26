@@ -7,7 +7,9 @@
 body {
     font-family: Arial, sans-serif;
 }
-
+ol {
+    list-style: none;
+}
 #panel {
     position: fixed;
     left: 0;
@@ -54,4 +56,25 @@ body {
     }
 }
 
-
+#bill_list {
+    .prod_item {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr;
+        gap: 0px 0px;               
+        .name {
+            font-weight: 700;           
+                 
+        } 
+    }
+    .sum {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ; 
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        .total_title {
+            font-weight: 700;
+            grid-column: 1 / span 2; 
+        }
+    }    
+}

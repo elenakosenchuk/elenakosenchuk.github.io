@@ -8,6 +8,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+ol {
+  list-style: none;
+}
+
 #panel {
   position: fixed;
   left: 0;
@@ -51,4 +55,24 @@ body {
 }
 #panel button:hover {
   color: red;
+}
+
+#bill_list .prod_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+}
+#bill_list .prod_item .name {
+  font-weight: 700;
+}
+#bill_list .sum {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+}
+#bill_list .sum .total_title {
+  font-weight: 700;
+  grid-column: 1/span 2;
 }

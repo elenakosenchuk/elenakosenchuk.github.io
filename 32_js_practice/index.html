@@ -14,48 +14,51 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-
-        </div>
-        <div class="col-4">
             <div class="card">
                 <div class="card-header">
+                    <h4>Add product to cart</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" class="form-control" placeholder="Enter product title" id="prod_name">
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" placeholder="Amount" min="1" value="1" id="prod_qty">
+                        </div>
+                        <div class="col-2">
+                            <input type="number" class="form-control" placeholder="Price" min="0" id="prod_price">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button class="btn btn-info" onclick="checkAndAddProduct()">Add</button>
+                </div>    
+            </div>        
+        
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4>CART</h4>
+                </div>
+                <div class="card-body">
+                    <ul id="cart_list"></ul>
+                </div>
+            </div>                
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
                     <h4>Bill</h4>
-                    <button class="btn btn-primary">Print</button>
-                    <div class="card-body" id="bill_wrap"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <h4>Add product to cart</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-8">
-                    <input type="text" class="form-control" placeholder="Enter product title" id="prod_name">
-                </div>
-                <div class="col-2">
-                    <input type="text" class="form-control" placeholder="Amount" min="1" value="1" id="prod_qty">
-                </div>
-                <div class="col-2">
-                    <input type="number" class="form-control" placeholder="Price" min="0" id="prod_price">
-                </div>
-            </div>
-        </div>
-        <div class="card-footer d-flex justify-content-end">
-            <button class="btn btn-info" onclick="checkAndAddProduct()">Add</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <h4>CART</h4>
-        </div>
-        <div class="card-body">
-            <ul id="cart_list"></ul>
-        </div>
-    </div>
-</div>
+                    <button class="btn btn-primary" onclick="shoppingBill()">Print</button>
+                </div>    
+                <div class="card-body" id="bill_wrap">
+                    <ol id="bill_list"></ol>
+                </div>           
+            </div>    
+        </div>    
+    </div>    
+</div>    
 
 
 

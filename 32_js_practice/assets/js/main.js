@@ -3,6 +3,7 @@ let CART = [
     {name: 'bread', qty: 1, price: 12, total: 12}
 ];
 
+
 function checkAndAddProduct(){
     let name = document.getElementById('prod_name').value,
         qty = document.getElementById('prod_qty').value,
@@ -65,8 +66,33 @@ function addToCart(name, qty, price){
 function shoppingList(){
     let card_html = '';
     for(let i=0; i < CART.length; i++){
-        card_html += `<li>${CART[i].name} ${CART[i].price} &times; ${CART[i].qty} = ${CART[i].total}</li>`;
+        card_html += `
+        <li>${CART[i].name} ${CART[i].price} &times; ${CART[i].qty} = ${CART[i].total}
+        <button class="btn btn-danger btn-sm">Remove</button>
+        </li>`;
     }
     document.getElementById("cart_list").innerHTML = card_html;
 }
 shoppingList();
+
+function productInBill(product){    
+    return `<div class="name">${product.name} (${product.qty})</div> <div class="price">${product.price} pc</div> <div class="total">${product.total}</div>`;
+}
+
+function totalBill(){
+    let sum = 0;
+    for(i=0; i < CART.length; i++){
+        sum = sum + CART[i].total; 
+    }
+    return sum;
+}
+
+function shoppingBill(){
+    let result = '';    
+    for(i=0; i < CART.length; i++){
+        result += `
+        <li class="prod_item">${productInBill(CART[i])}</li>`;        
+    }
+    result = result + `<li class="sum"><div class="total_title">Total sum:</div><div>${totalBill()}</div></li>`;        
+    document.getElementById("bill_list").innerHTML = result;
+}
