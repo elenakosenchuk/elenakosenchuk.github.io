@@ -50,7 +50,8 @@ function mySum() {
   var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var s = parseInt(a) + parseInt(b);
   return s.toFixed(2); // нельзя ставить перенос строки сразу после return
-}
+} //const mySum=(a=0,b=0)=>parseInt(a)+parseInt(b); // стрелочная фуункция
+
 
 function printResult(s, id) {
   document.getElementById(id).innerHTML = "Summ: " + s;
@@ -59,3 +60,42 @@ function printResult(s, id) {
 function printError(text, id) {
   document.getElementById(id).innerHTML = "<span style=\"color:red\">".concat(text, "</span>");
 }
+
+var addZero = function addZero(n) {
+  return n < 10 ? '0' + n : n;
+}; // добавление ноля стрелочная
+// function addZero(n){
+//     if(n<10){
+//         return '0'+n;
+//     }else{
+//         return n;
+//     }
+// }
+
+
+function sayHello() {
+  var name = prompt("Enter name");
+
+  if (name != "" && name != null) {
+    alert("Hello, " + name + "!");
+  } else {
+    sayHello();
+  }
+} // рекурсивная функция (вызывает сама себя)
+
+
+function checkNewMessage() {
+  console.log('CALL: checkNewMessage');
+  setTimeout(function () {
+    checkNewMessage();
+  }, 5000);
+} // checkNewMessage();
+
+
+function sq(a) {
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  b = b == 0 ? a : b;
+  return a * b;
+}
+
+sq(4);
