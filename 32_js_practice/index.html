@@ -37,11 +37,41 @@
             </div>        
         
             <div class="card mt-4">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     <h4>CART</h4>
+                    <button class="btn btn-primary" onclick="changeSort()">Sort</button>
                 </div>
                 <div class="card-body">
-                    <ul id="cart_list"></ul>
+                    <table class="table">
+                        <thead>
+                            <tr>                                
+                                <td>Name</td>
+                                <td class="text-center">Buy</td>
+                                <td class="text-end">Price</td>
+                                <td class="text-center">Qty</td>
+                                <td class="text-end">Total</td>
+                                <td class="text-end">Actions</td>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"><b>Total buyed</b></td>
+                                <td class="text-end"><span id="total_buyed"></span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><b>Total Notbuyed</b></td>
+                                <td class="text-end"><span id="total_notbuyed"></span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><b>Total</b></td>
+                                <td class="text-end"><span id="total"></span></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                        <tbody id="cart_list"></tbody>
+                    </table>
                 </div>
             </div>                
         </div>

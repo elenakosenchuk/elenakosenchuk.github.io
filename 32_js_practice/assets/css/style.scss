@@ -72,8 +72,9 @@ ol {
         grid-template-columns: 1fr 1fr 1fr ; 
         grid-template-rows: 1fr;
         gap: 0px 0px;
+        font-size: 24px;
         .total_title {
-            font-weight: 700;
+            font-weight: 700;            
             grid-column: 1 / span 2; 
         }
     }    

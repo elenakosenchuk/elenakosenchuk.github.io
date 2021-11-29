@@ -4,41 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Document</title>    
 </head>
 <body>
 
-    <div id="multi_table">
-    <table>
-        <thead>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>10</td>                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1*1=1</td>
-                <td>2*1=2</td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td></td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
+    <input type="number" id="num_1" value="2">
+    <br>
+    <input type="number" id="num_2" value="3">
+    <br>
+    <button type="button" onclick="calc('num_1', 'num_2', 'rez')">CALC</button>
+    <div id="rez"></div>
+    <hr>
+    <input type="number" id="num_3" value="6">
+    <br>
+    <input type="number" id="num_4" value="4">
+    <br>
+    <button type="button" onclick="calc('num_3', 'num_4', 'rez_2')">CALC</button>
+    <div id="rez_2"></div>
+
+
+    <br>
+    <br>
+    <div id="multi_table"></div>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

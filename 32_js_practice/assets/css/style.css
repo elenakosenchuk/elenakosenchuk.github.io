@@ -71,6 +71,7 @@ ol {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
+  font-size: 24px;
 }
 #bill_list .sum .total_title {
   font-weight: 700;

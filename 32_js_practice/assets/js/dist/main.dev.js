@@ -4,13 +4,28 @@ var CART = [{
   name: 'milk',
   qty: 2,
   price: 28,
-  total: 56
+  total: 56,
+  buy: true
 }, {
   name: 'bread',
   qty: 1,
   price: 12,
-  total: 12
+  total: 12,
+  buy: false
+}, {
+  name: 'beer',
+  qty: 2,
+  price: 25,
+  total: 50,
+  buy: true
+}, {
+  name: 'cheese',
+  qty: 1,
+  price: 190,
+  total: 190,
+  buy: false
 }];
+var cartSort = "asc";
 
 function checkAndAddProduct() {
   var name = document.getElementById('prod_name').value,
@@ -62,9 +77,11 @@ function addToCart(name, qty, price) {
       name: name,
       qty: qty,
       price: price,
-      total: qty * price
+      total: qty * price,
+      buy: false
     });
   } else {
+    CART[ind].buy = false;
     CART[ind].qty += qty;
     CART[ind].total = CART[ind].qty * CART[ind].price;
   }
@@ -77,17 +94,76 @@ function addToCart(name, qty, price) {
   shoppingList();
 }
 
-function shoppingList() {
-  var card_html = '';
-
-  for (var _i = 0; _i < CART.length; _i++) {
-    card_html += "\n        <li>".concat(CART[_i].name, " ").concat(CART[_i].price, " &times; ").concat(CART[_i].qty, " = ").concat(CART[_i].total, "\n        <button class=\"btn btn-danger btn-sm\">Remove</button>\n        </li>");
-  }
-
-  document.getElementById("cart_list").innerHTML = card_html;
-}
+var productRow = function productRow(item, i) {
+  return "\n         <tr>             \n             <td>".concat(item.name, "</td>\n             <td class=\"text-center\">").concat(item.buy ? '<span class="badge bg-success">yes</span>' : '<span class="badge bg-danger">no</span>', "</td>\n             <td class=\"text-end\">").concat(item.price.toFixed(2), "</td>\n             <td class=\"text-center\">").concat(item.qty, "</td>\n             <td class=\"text-end\">").concat(item.total.toFixed(2), "</td>\n             <td class=\"text-end\">\n                 ").concat(!item.buy ? "<button type=\"button\" class=\"btn btn-success btn-sm\" onclick=\"buyProduct(".concat(i, ")\">Buy</button>") : '', "\n             <button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"deleteFromeCart(").concat(i, ")\">Delete</button></td>\n             </tr>\n         ");
+};
 
 shoppingList();
+
+function shoppingList() {
+  var card_html = '';
+  var total = CART.reduce(function (accunPrice, curItem) {
+    return accunPrice + curItem.total;
+  }, 0);
+  var total_buyed = CART.filter(function (item) {
+    return item.buy;
+  }).reduce(function (accunPrice, curItem) {
+    return accunPrice + curItem.total;
+  }, 0);
+  var total_notbuyed = CART.filter(function (item) {
+    return !item.buy;
+  }).reduce(function (accunPrice, curItem) {
+    return accunPrice + curItem.total;
+  }, 0);
+
+  if (cartSort == "asc") {
+    CART.sort(function (a, b) {
+      return a.total - b.total;
+    });
+  } else {
+    CART.sort(function (a, b) {
+      return b.total - a.total;
+    });
+  }
+
+  CART.forEach(function (item, i) {
+    card_html += !item.buy ? productRow(item, i) : '';
+  });
+  CART.forEach(function (item, i) {
+    card_html += item.buy ? productRow(item, i) : '';
+  });
+  document.getElementById("cart_list").innerHTML = card_html;
+  document.getElementById("total").innerHTML = total.toFixed(2);
+  document.getElementById("total_buyed").innerHTML = total_buyed.toFixed(2);
+  document.getElementById("total_notbuyed").innerHTML = total_notbuyed.toFixed(2);
+}
+
+function changeSort() {
+  cartSort = cartSort == "asc" ? "desc" : "asc";
+  shoppingList();
+}
+
+var buyProduct = function buyProduct(ind) {
+  if (typeof CART[ind] !== "undefined") {
+    CART[ind].buy = true;
+    shoppingList();
+    panel.info('Product successfully bought', true);
+  } else {
+    panel.danger('Not found product for buy', true);
+  }
+};
+
+var deleteFromeCart = function deleteFromeCart(ind) {
+  if (typeof CART[ind] !== "undefined") {
+    if (confirm("Remove ".concat(CART[ind].name, " from cart?"))) {
+      CART.splice(ind, 1);
+      shoppingList();
+      panel.success('Product successfully removed from cart', true);
+    }
+  } else {
+    panel.danger('Not found product for remove', true);
+  }
+};
 
 function productInBill(product) {
   return "<div class=\"name\">".concat(product.name, " (").concat(product.qty, ")</div> <div class=\"price\">").concat(product.price, " pc</div> <div class=\"total\">").concat(product.total, "</div>");

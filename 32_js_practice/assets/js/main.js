@@ -1,8 +1,11 @@
 let CART = [
-    {name: 'milk', qty: 2, price: 28, total: 56},
-    {name: 'bread', qty: 1, price: 12, total: 12}
+    {name: 'milk', qty: 2, price: 28, total: 56, buy:true},
+    {name: 'bread', qty: 1, price: 12, total: 12, buy:false},
+    {name: 'beer', qty: 2, price: 25, total: 50, buy:true},
+    {name: 'cheese', qty: 1, price: 190, total: 190, buy:false}
 ];
 
+let cartSort = "asc";
 
 function checkAndAddProduct(){
     let name = document.getElementById('prod_name').value,
@@ -47,14 +50,14 @@ function addToCart(name, qty, price){
             name:name,
             qty:qty,
             price:price,
-            total:qty*price
+            total:qty*price,
+            buy: false
         });
     }else{
+        CART[ind].buy = false;
         CART[ind].qty+=qty;
         CART[ind].total = CART[ind].qty*CART[ind].price;
-    }  
-
-    
+    }    
     console.log(CART);
     document.getElementById('prod_name').value = '';
     document.getElementById('prod_qty').value = '1';
@@ -63,17 +66,83 @@ function addToCart(name, qty, price){
     shoppingList();
 }
 
+const productRow = (item, i) =>{
+    return `
+         <tr>             
+             <td>${item.name}</td>
+             <td class="text-center">${item.buy?'<span class="badge bg-success">yes</span>':'<span class="badge bg-danger">no</span>'}</td>
+             <td class="text-end">${item.price.toFixed(2)}</td>
+             <td class="text-center">${item.qty}</td>
+             <td class="text-end">${item.total.toFixed(2)}</td>
+             <td class="text-end">
+                 ${!item.buy?`<button type="button" class="btn btn-success btn-sm" onclick="buyProduct(${i})">Buy</button>`:''}
+             <button type="button" class="btn btn-danger btn-sm" onclick="deleteFromeCart(${i})">Delete</button></td>
+             </tr>
+         `;
+ }
+
+shoppingList();
 function shoppingList(){
     let card_html = '';
-    for(let i=0; i < CART.length; i++){
-        card_html += `
-        <li>${CART[i].name} ${CART[i].price} &times; ${CART[i].qty} = ${CART[i].total}
-        <button class="btn btn-danger btn-sm">Remove</button>
-        </li>`;
+    let total = CART.reduce(
+        (accunPrice, curItem) =>{return accunPrice + curItem.total}, 0); 
+    let total_buyed = CART.filter(
+        (item) =>{
+            return item.buy;
+        }
+    ).reduce(
+        (accunPrice, curItem) =>{return accunPrice + curItem.total}, 0);
+     
+    let total_notbuyed = CART.filter(
+        (item) =>{
+            return !item.buy;
+        }
+    ).reduce(
+        (accunPrice, curItem) =>{return accunPrice + curItem.total}, 0);
+    if (cartSort == "asc"){
+        CART.sort((a, b) => a.total - b.total);        
+    }else{
+        CART.sort((a, b) => b.total - a.total);
     }
+    CART.forEach((item, i)=>{
+        card_html += !item.buy?productRow(item, i):'';
+    });
+    CART.forEach((item, i)=>{
+        card_html += item.buy?productRow(item, i):'';
+    }); 
+
+    
     document.getElementById("cart_list").innerHTML = card_html;
+    document.getElementById("total").innerHTML = total.toFixed(2);
+    document.getElementById("total_buyed").innerHTML = total_buyed.toFixed(2);
+    document.getElementById("total_notbuyed").innerHTML = total_notbuyed.toFixed(2);    
 }
-shoppingList();
+
+function changeSort(){
+    cartSort=(cartSort=="asc")?"desc":"asc";
+    shoppingList();    
+}
+
+const buyProduct = (ind) => {
+    if(typeof CART[ind] !=="undefined"){
+        CART[ind].buy = true;
+        shoppingList();
+        panel.info('Product successfully bought', true);
+    }else{
+        panel.danger('Not found product for buy', true)
+    }
+}
+const deleteFromeCart = (ind)=>{
+    if(typeof CART[ind] !=="undefined"){
+        if(confirm(`Remove ${CART[ind].name} from cart?`)){
+            CART.splice(ind, 1);
+            shoppingList();
+            panel.success('Product successfully removed from cart', true)
+        }
+    }else{
+        panel.danger('Not found product for remove', true)
+    }
+}
 
 function productInBill(product){    
     return `<div class="name">${product.name} (${product.qty})</div> <div class="price">${product.price} pc</div> <div class="total">${product.total}</div>`;
@@ -96,3 +165,6 @@ function shoppingBill(){
     result = result + `<li class="sum"><div class="total_title">Total sum:</div><div>${totalBill()}</div></li>`;        
     document.getElementById("bill_list").innerHTML = result;
 }
+
+
+

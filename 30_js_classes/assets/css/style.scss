@@ -1,0 +1,16 @@
+.my_table {
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-collapse: collapse;
+    td {
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        padding: 3px 10px;
+    }
+    thead, tfoot {
+        td {
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
