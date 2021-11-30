@@ -5,9 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>1. Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="num_1" value="">
+                        <br>
+                        <br>
+                        <input type="number" id="num_2" value="">           
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="rez" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="compare('num_1', 'num_2', 'rez')">Сравнить</button>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>2. Написать функцию, которая вычисляет факториал переданного ей числа.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="num" value="">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="factorial" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="factorial('num', 'factorial')">Считать</button>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="tel" id="num_3" maxlength="1" value="">
+                        <br>
+                        <br>
+                        <input type="tel" id="num_4" maxlength="1" value="">
+                        <br>
+                        <br>
+                        <input type="tel" id="num_5" maxlength="1" value="">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="transformation" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="transform('num_3', 'num_4', 'num_5', 'transformation')">Превратить</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

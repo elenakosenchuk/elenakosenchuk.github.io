@@ -1,6 +1,86 @@
 // 1. Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
+
+function compare(field_1_id, field_2_id, rez_id){
+    let field_1 = document.getElementById(field_1_id);
+    let field_2 = document.getElementById(field_2_id);
+    if(field_1.value == ""){        
+        printError('Введите первое число', rez_id);
+        return false;
+    }
+    else if(field_2.value == ""){
+        printError('Введите второе число', rez_id);
+        return false;        
+     }else{
+        let r = numbersCompare(field_1.value, field_2.value);
+        printResult(r, rez_id);
+     }
+}
+
+function printError(text, id){
+    document.getElementById(id).innerHTML = `<span style="color:red">${text}</span>`;
+}
+
+function printResult(text, id){
+    document.getElementById(id).innerHTML = `${text}`;
+}
+
+function numbersCompare(a, b){
+    if(a<b){
+        return -1;
+    }
+    else if(a>b){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 // 2. Написать функцию, которая вычисляет факториал переданного ей числа.
+
+function factorial(num_id, factorial_id) {
+    let num = document.getElementById(num_id);
+    if(num.value != ""){
+        let f = numberFactorial(parseInt(num.value));
+        printResult(f, factorial_id);
+    }else{
+        printError('Введите число', factorial_id);
+    }
+}
+
+function numberFactorial(a){
+    if(a<2){
+        return a;
+    }
+    return a*numberFactorial(a-1);    
+}
+
 // 3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
+
+function transform(field_1_id, field_2_id, field_3_id, rez_id){
+    let field_1 = document.getElementById(field_1_id);
+    let field_2 = document.getElementById(field_2_id);
+    let field_3 = document.getElementById(field_3_id);
+    if(field_1.value == "" && field_1.length == 1){        
+        printError('Введите первое число', rez_id);
+        return false;
+    }
+    else if(field_2.value == "" && field_2.length == 1){
+        printError('Введите второе число', rez_id);
+        return false;
+    }
+    else if(field_3.value == "" && field_3.length == 1){
+        printError('Введите третье число', rez_id);
+        return false;         
+     }else{
+        let t = numbersTransform(parseInt(field_1.value), parseInt(field_2.value), parseInt(field_3.value));
+        printResult(t, rez_id);
+     }
+}
+
+function numbersTransform(a,b,c){    
+    return a*100+b*10+c;
+}
+
 // 4. Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.
 // 5. Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.
 // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
