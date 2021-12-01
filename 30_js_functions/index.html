@@ -66,6 +66,43 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>4. Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="side_1" value="">
+                        <br>
+                        <br>
+                        <input type="number" id="side_2" value="">           
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="sq" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="square('side_1', 'side_2', 'sq')">Считать</button>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>5. Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="ideal_number" value="">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="ideal" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="('ideal_number', 'ideal')">Проверить</button>
+                    </div>  
+                </div>
+            </div>
+
+        </div>
+
     </div>
     
     <script src="assets/js/main.js"></script>

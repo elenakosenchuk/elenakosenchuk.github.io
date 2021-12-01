@@ -1,5 +1,14 @@
 // 1. Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
 
+function printError(text, id){
+    document.getElementById(id).innerHTML = `<span style="color:red">${text}</span>`;
+}
+
+function printResult(text, id){
+    document.getElementById(id).innerHTML = `${text}`;
+}
+
+
 function compare(field_1_id, field_2_id, rez_id){
     let field_1 = document.getElementById(field_1_id);
     let field_2 = document.getElementById(field_2_id);
@@ -14,14 +23,6 @@ function compare(field_1_id, field_2_id, rez_id){
         let r = numbersCompare(field_1.value, field_2.value);
         printResult(r, rez_id);
      }
-}
-
-function printError(text, id){
-    document.getElementById(id).innerHTML = `<span style="color:red">${text}</span>`;
-}
-
-function printResult(text, id){
-    document.getElementById(id).innerHTML = `${text}`;
 }
 
 function numbersCompare(a, b){
@@ -82,7 +83,40 @@ function numbersTransform(a,b,c){
 }
 
 // 4. Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.
+
+function square(field_1_id, field_2_id, square_id){    
+    let field_1 = document.getElementById(field_1_id);
+    let field_2 = document.getElementById(field_2_id);    
+    if(field_1.value == ""){
+        let sq = squareCount(parseInt(field_2.value), parseInt(field_2.value));
+        printResult(sq, square_id);
+    }else if(field_2.value == ""){
+        let sq = squareCount(parseInt(field_1.value), parseInt(field_1.value));
+        printResult(sq, square_id);
+    }else if(field_1.value != "" && field_2.value != ""){
+        let sq = squareCount(parseInt(field_1.value), parseInt(field_2.value));
+        printResult(sq, square_id);
+    }else{
+        printError('Введите хотябы одно число', square_id);
+    }
+}
+
+function squareCount(a,b){
+    // b=(b==0)?a:b;
+    return a*b;
+}
+
 // 5. Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.
+
+function idealNumber(field_1_id, ideal_id){
+    let number = document.getElementById(parseInt(field_1_id));
+    let divider = 1;
+    let summDivider = "";
+    for(number<divider;num % divider == 0;divider++){
+        summDivider += divider + "";
+    }
+}
+
 // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
 // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
 // 8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.

@@ -214,6 +214,7 @@ function circle() {
     let c = parseInt(prompt("Enter perimeter of a square"));
     let n = p / 4;
     let r = c / 6.28;
+    // let r = c / 2 * Math.PI;
     if(n <= r * 2) {
         result = "Your circle fit in a square";
     }

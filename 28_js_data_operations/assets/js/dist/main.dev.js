@@ -124,6 +124,20 @@ function sameNumber2() {
   }
 
   alert("There are not the same numbers here");
+}
+
+function isMatched(num) {
+  num = parseInt(num);
+  var s, d, e;
+  s = parseInt(num / 100);
+  d = parseInt(num % 100 / 10);
+  e = num % 10;
+
+  if (s == d || s == e || d == e) {
+    console.log('Match');
+  } else {
+    console.log('NOT match');
+  }
 } // Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
 
 
@@ -131,7 +145,7 @@ function year() {
   var number = parseInt(prompt("Enter some year"));
   var kindYear;
 
-  if ((number % 400 == 0 || number % 4 == 0) && number % 100 != 0) {
+  if (number % 400 == 0 || number % 4 == 0 && number % 100 != 0) {
     kindYear = "leap year";
   } else {
     kindYear = "common year";
@@ -161,8 +175,6 @@ function palindrom() {
 
 
 function convertor() {
-  // let dollar = parseInt(document.getElementById("usd").value);
-  // document.getElementById("quader").innerText = `Quder: ${result} sm2`;
   var dollar = parseInt(prompt("Enter USD sum"));
   var currency = prompt("Choose currency EUR, UAH or AZN");
   var currency2 = currency.toUpperCase();
@@ -205,7 +217,7 @@ function circle() {
   var p = parseInt(prompt("Enter circle length"));
   var c = parseInt(prompt("Enter perimeter of a square"));
   var n = p / 4;
-  var r = c / 6.28;
+  var r = c / 6.28; // let r = c / 2 * Math.PI;
 
   if (n <= r * 2) {
     result = "Your circle fit in a square";
