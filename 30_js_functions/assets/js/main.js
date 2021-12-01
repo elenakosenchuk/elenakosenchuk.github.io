@@ -8,6 +8,9 @@ function printResult(text, id){
     document.getElementById(id).innerHTML = `${text}`;
 }
 
+function transformInputInInt(input_id){
+    return parseInt(document.getElementById(input_id).value) || 0;
+}
 
 function compare(field_1_id, field_2_id, rez_id){
     let field_1 = document.getElementById(field_1_id);
@@ -86,14 +89,16 @@ function numbersTransform(a,b,c){
 
 function square(field_1_id, field_2_id, square_id){    
     let field_1 = document.getElementById(field_1_id);
-    let field_2 = document.getElementById(field_2_id);    
+    let field_2 = document.getElementById(field_2_id);
+
     if(field_1.value == ""){
-        let sq = squareCount(parseInt(field_2.value), parseInt(field_2.value));
-        printResult(sq, square_id);
-    }else if(field_2.value == ""){
-        let sq = squareCount(parseInt(field_1.value), parseInt(field_1.value));
-        printResult(sq, square_id);
-    }else if(field_1.value != "" && field_2.value != ""){
+        field_1.value = field_2.value;        
+    }
+    if(field_2.value == ""){
+        field_2.value = field_1.value;
+    }
+
+    if(field_1.value != ""){
         let sq = squareCount(parseInt(field_1.value), parseInt(field_2.value));
         printResult(sq, square_id);
     }else{
@@ -101,24 +106,57 @@ function square(field_1_id, field_2_id, square_id){
     }
 }
 
-function squareCount(a,b){
-    // b=(b==0)?a:b;
+function squareCount(a,b){    
     return a*b;
 }
 
 // 5. Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.
 
 function idealNumber(field_1_id, ideal_id){
-    let number = document.getElementById(parseInt(field_1_id));
+    let number = document.getElementById(field_1_id);    
+    if (isIdeal(parseInt(number.value))){
+        printResult('Это совершенное число', ideal_id);
+    }else {
+        printResult('Это не совершенное число', ideal_id);
+    }    
+}
+
+function isIdeal(number){
     let divider = 1;
-    let summDivider = "";
-    for(number<divider;num % divider == 0;divider++){
-        summDivider += divider + "";
+    let summDivider = 0;    
+    for(divider=1;divider<number;divider++){
+        if(number % divider == 0){
+            summDivider += divider;
+        }        
     }
+    return number == summDivider;
 }
 
 // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
+
+function idealInRange(fieid_1_id, field_2_id, rez_id){
+    let min = document.getElementById(fieid_1_id);
+    let max = document.getElementById(field_2_id);
+    let start = parseInt(min.value);
+    let end = parseInt(max.value);
+    let idealNumbers = '';
+    for(i=start; i<=end; i++){
+        if(isIdeal(i)) {
+            idealNumbers += `${i} `;
+        }
+    }
+    printResult(`Совершенные числа: ${idealNumbers}`, rez_id)
+}
+
 // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
+
+function time(field_1_id, field_2_id, field_3_id, rez_id){
+    let hours = transformInputInInt(field_1_id);
+    let minutes = transformInputInInt(field_2_id);
+    let seconds = transformInputInInt(field_3_id);
+
+}
+
 // 8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
 // 9. Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
 // 10. Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».
