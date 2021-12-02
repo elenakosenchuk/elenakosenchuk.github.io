@@ -151,10 +151,28 @@ function transformInputInInt(input_id) {
   return parseInt(document.getElementById(input_id).value) || 0;
 }
 
+var addZero = function addZero(n) {
+  return n < 10 ? '0' + n : n;
+};
+
 function time(field_1_id, field_2_id, field_3_id, rez_id) {
   var hours = transformInputInInt(field_1_id);
   var minutes = transformInputInInt(field_2_id);
   var seconds = transformInputInInt(field_3_id);
+  var fullTime = '';
+  Math.abs(Math.trunc(seconds / 60)); //350/60=5
+
+  Math.abs(seconds % 60); //350%60=50
+
+  if ((hours == 0 || hours < 10) && (minutes == 0 || minutes < 10) && (seconds == 0 || seconds < 10)) {
+    fullTime = "".concat(addZero(hours), ":").concat(addZero(minutes), ":").concat(addZero(seconds));
+    printResult("\u0412\u0440\u0435\u043C\u044F ".concat(fullTime), rez_id);
+  }
+
+  if (hours <= 24 && minutes < 60 && seconds < 60) {
+    fullTime = "".concat(hours, ":").concat(minutes, ":").concat(seconds);
+    printResult("\u0412\u0440\u0435\u043C\u044F ".concat(fullTime), rez_id);
+  }
 } // 8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
 // 9. Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
 // 10. Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».

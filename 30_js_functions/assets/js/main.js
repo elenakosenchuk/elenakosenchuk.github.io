@@ -94,7 +94,6 @@ function square(field_1_id, field_2_id, square_id){
     if(field_2.value == ""){
         field_2.value = field_1.value;
     }
-
     if(field_1.value != ""){
         let sq = squareCount(parseInt(field_1.value), parseInt(field_2.value));
         printResult(sq, square_id);
@@ -151,11 +150,23 @@ function transformInputInInt(input_id){
     return parseInt(document.getElementById(input_id).value) || 0;
 }
 
+const addZero=n=>n<10?'0'+n:n;
+
 function time(field_1_id, field_2_id, field_3_id, rez_id){
     let hours = transformInputInInt(field_1_id);
     let minutes = transformInputInInt(field_2_id);
     let seconds = transformInputInInt(field_3_id);
-
+    let fullTime = '';
+    Math.abs(Math.trunc(seconds/60)) //350/60=5
+    Math.abs(seconds%60) //350%60=50
+    if((hours == 0 || hours < 10) && (minutes == 0 || minutes < 10) && (seconds == 0 || seconds < 10)){
+        fullTime = `${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}`;
+        printResult(`Время ${fullTime}`, rez_id);
+    }
+    if(hours <= 24 && minutes < 60 && seconds < 60){
+        fullTime = `${hours}:${minutes}:${seconds}`;
+        printResult(`Время ${fullTime}`, rez_id);
+    }
 }
 
 // 8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.

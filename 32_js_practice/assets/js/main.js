@@ -144,27 +144,66 @@ const deleteFromeCart = (ind)=>{
     }
 }
 
+function selectBoughtProduct(boughtMassive){
+    let bought = boughtMassive.filter(item =>item.buy);
+    return bought;        
+} // отбирает только проданные товары
+
+function prodTotalBill(prodactList){    
+    let prodTotal = prodactList.reduce(function(a, item){
+        return a + item.total;
+    }, 0);
+    return prodTotal;
+} // считает стоимость проданных товаров
+
+function discount(totalBill){
+    let amount = parseInt(document.getElementById("discount_amount").value) || 0;
+    let type = document.getElementById("discount_type").value;    
+    if (type == 'HRN'){
+        return amount;
+    }else{
+        return totalBill * amount / 100;
+    }
+} // считает скидку проданных товаров
+
+function pdv(amount){
+    return amount*0.2;
+} // считает пдв
+
+function billTotal(s){    
+    return s + pdv(s);
+} // считает полную сумму в чеке
+
 function productInBill(product){    
-    return `<div class="name">${product.name} (${product.qty})</div> <div class="price">${product.price} pc</div> <div class="total">${product.total}</div>`;
-}
+    return `<tr>
+        <td>${product.name}</td>
+        <td class="text-end">${product.price}</td>
+        <td class="text-center">х</td>
+        <td class="text-start">${product.qty}</td>
+        <td class="text-start">=</td>
+        <td class="text-start">${product.total}</td>
+        </tr>`;
+} // рисует 1 товар
 
-function totalBill(){
-    let sum = 0;
-    for(i=0; i < CART.length; i++){
-        sum = sum + CART[i].total; 
-    }
-    return sum;
-}
-
-function shoppingBill(){
+function shoppingBill(billList){
     let result = '';    
-    for(i=0; i < CART.length; i++){
-        result += `
-        <li class="prod_item">${productInBill(CART[i])}</li>`;        
+    for(i=0; i < billList.length; i++){
+        result += `${productInBill(billList[i])}`;        
     }
-    result = result + `<li class="sum"><div class="total_title">Total sum:</div><div>${totalBill()}</div></li>`;        
+    result = result;        
     document.getElementById("bill_list").innerHTML = result;
 }
 
-
+function printBill(){    
+    let boughtItems = selectBoughtProduct(CART);
+    shoppingBill(boughtItems);
+    let boughtTotal = prodTotalBill(boughtItems);
+    document.getElementById("bill_prod_total").innerHTML = boughtTotal.toFixed(2);
+    let disc = discount(boughtTotal);
+    document.getElementById("bill_discount").innerHTML = disc.toFixed(2);
+    let p = pdv(boughtTotal);
+    document.getElementById("bill_pdv").innerHTML = p.toFixed(2);
+    let bigTotal = billTotal(boughtTotal);
+    document.getElementById("bill_total").innerHTML = bigTotal.toFixed(2);
+}
 

@@ -80,11 +80,53 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h4>Bill</h4>
-                    <button class="btn btn-primary" onclick="shoppingBill()">Print</button>
+                    <div class="col-md-4">
+                        <label class="form-label"><b>Discount</b></label>
+                        <select id="discount_amount" class="form-select">
+                          <option value="5" selected>5</option>                          
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                        </select>
+                        <br>
+                        <select id="discount_type" class="form-select">
+                            <option value="HRN" selected>HRN</option>
+                            <option value="percent">%</option>
+                          </select>
+                      </div>                    
                 </div>    
-                <div class="card-body" id="bill_wrap">
-                    <ol id="bill_list"></ol>
-                </div>           
+                <div class="card-body" id="bill_wrap">                  
+                    <table class="table">                        
+                        <tbody id="bill_list"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td id="prod_total" colspan="4">Product total:</td>
+                                <td class="text-end"><span id="bill_prod_total"></span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Discount:</td>
+                                <td class="text-end"><span id="bill_discount"></span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">PDV 20%:</td>
+                                <td class="text-end"><span id="bill_pdv"></span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><b>Total:</b></td>
+                                <td class="text-end"><span id="bill_total"></span></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="card-footer d-flex justify-content-between">                    
+                    <button class="btn btn-primary" onclick="printBill()">Print Bill</button>
+                </div>             
             </div>    
         </div>    
     </div>    

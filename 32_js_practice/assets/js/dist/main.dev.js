@@ -165,27 +165,69 @@ var deleteFromeCart = function deleteFromeCart(ind) {
   }
 };
 
-function productInBill(product) {
-  return "<div class=\"name\">".concat(product.name, " (").concat(product.qty, ")</div> <div class=\"price\">").concat(product.price, " pc</div> <div class=\"total\">").concat(product.total, "</div>");
-}
+function selectBoughtProduct(boughtMassive) {
+  var bought = boughtMassive.filter(function (item) {
+    return item.buy;
+  });
+  return bought;
+} // отбирает только проданные товары
 
-function totalBill() {
-  var sum = 0;
 
-  for (i = 0; i < CART.length; i++) {
-    sum = sum + CART[i].total;
+function prodTotalBill(prodactList) {
+  var prodTotal = prodactList.reduce(function (a, item) {
+    return a + item.total;
+  }, 0);
+  return prodTotal;
+} // считает стоимость проданных товаров
+
+
+function discount(totalBill) {
+  var amount = parseInt(document.getElementById("discount_amount").value) || 0;
+  var type = document.getElementById("discount_type").value;
+
+  if (type == 'HRN') {
+    return amount;
+  } else {
+    return totalBill * amount / 100;
   }
+} // считает скидку проданных товаров
 
-  return sum;
-}
 
-function shoppingBill() {
+function pdv(amount) {
+  return amount * 0.2;
+} // считает пдв
+
+
+function billTotal(s) {
+  return s + pdv(s);
+} // считает полную сумму в чеке
+
+
+function productInBill(product) {
+  return "<tr>\n        <td>".concat(product.name, "</td>\n        <td class=\"text-end\">").concat(product.price, "</td>\n        <td class=\"text-center\">\u0445</td>\n        <td class=\"text-start\">").concat(product.qty, "</td>\n        <td class=\"text-start\">=</td>\n        <td class=\"text-start\">").concat(product.total, "</td>\n        </tr>");
+} // рисует 1 товар
+
+
+function shoppingBill(billList) {
   var result = '';
 
-  for (i = 0; i < CART.length; i++) {
-    result += "\n        <li class=\"prod_item\">".concat(productInBill(CART[i]), "</li>");
+  for (i = 0; i < billList.length; i++) {
+    result += "".concat(productInBill(billList[i]));
   }
 
-  result = result + "<li class=\"sum\"><div class=\"total_title\">Total sum:</div><div>".concat(totalBill(), "</div></li>");
+  result = result;
   document.getElementById("bill_list").innerHTML = result;
+}
+
+function printBill() {
+  var boughtItems = selectBoughtProduct(CART);
+  shoppingBill(boughtItems);
+  var boughtTotal = prodTotalBill(boughtItems);
+  document.getElementById("bill_prod_total").innerHTML = boughtTotal.toFixed(2);
+  var disc = discount(boughtTotal);
+  document.getElementById("bill_discount").innerHTML = disc.toFixed(2);
+  var p = pdv(boughtTotal);
+  document.getElementById("bill_pdv").innerHTML = p.toFixed(2);
+  var bigTotal = billTotal(boughtTotal);
+  document.getElementById("bill_total").innerHTML = bigTotal.toFixed(2);
 }
