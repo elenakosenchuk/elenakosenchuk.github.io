@@ -121,23 +121,25 @@
         </div>
         <br>
         <div class="row">
-            <div class="card">
-                <div class="card-header">
-                    <h5>7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.</h5>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="hour" value="">
+                        <br>
+                        <br>
+                        <input type="number" id="minute" value="">
+                        <br>
+                        <br>
+                        <input type="number" id="secund" value="">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="time" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="('hour', 'minute', 'secund', 'time')">Посмотреть время</button>
+                    </div>  
                 </div>
-                <div class="card-body">
-                    <input type="number" id="hour" value="">
-                    <br>
-                    <br>
-                    <input type="number" id="minute" value="">
-                    <br>
-                    <br>
-                    <input type="number" id="secund" value="">                             
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <div id="time" class="p-3 border bg-light"></div>
-                    <button class="btn btn-info" onclick="('hour', 'minute', 'secund', 'time')">Посмотреть время</button>
-                </div>  
             </div>
         </div>
 

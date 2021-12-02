@@ -8,9 +8,6 @@ function printResult(text, id){
     document.getElementById(id).innerHTML = `${text}`;
 }
 
-function transformInputInInt(input_id){
-    return parseInt(document.getElementById(input_id).value) || 0;
-}
 
 function compare(field_1_id, field_2_id, rez_id){
     let field_1 = document.getElementById(field_1_id);
@@ -149,6 +146,10 @@ function idealInRange(fieid_1_id, field_2_id, rez_id){
 }
 
 // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
+
+function transformInputInInt(input_id){
+    return parseInt(document.getElementById(input_id).value) || 0;
+}
 
 function time(field_1_id, field_2_id, field_3_id, rez_id){
     let hours = transformInputInInt(field_1_id);
