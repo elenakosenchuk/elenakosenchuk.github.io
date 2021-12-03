@@ -132,7 +132,7 @@ function isIdeal(number){
 
 function idealInRange(fieid_1_id, field_2_id, rez_id){
     let min = document.getElementById(fieid_1_id);
-    let max = document.getElementById(field_2_id);
+    let max = document.getElementById(field_2_id);    
     let start = parseInt(min.value);
     let end = parseInt(max.value);
     let idealNumbers = '';
@@ -141,7 +141,7 @@ function idealInRange(fieid_1_id, field_2_id, rez_id){
             idealNumbers += `${i} `;
         }
     }
-    printResult(`Совершенные числа: ${idealNumbers}, `, rez_id)
+    printResult(`Совершенные числа: ${idealNumbers} `, rez_id)
 }
 
 // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
