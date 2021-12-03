@@ -48,12 +48,7 @@ function factorial(num_id, factorial_id) {
     }
 }
 
-function numberFactorial(a){
-    if(a<2){
-        return a;
-    }
-    return a*numberFactorial(a-1);    
-}
+const numberFactorial = a => a<2?a:a*numberFactorial(a-1);
 
 // 3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
 
@@ -117,7 +112,7 @@ function idealNumber(field_1_id, ideal_id){
     }    
 }
 
-function isIdeal(number){
+const isIdeal = number => {
     let divider = 1;
     let summDivider = 0;    
     for(divider=1;divider<number;divider++){
@@ -130,11 +125,9 @@ function isIdeal(number){
 
 // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
 
-function idealInRange(fieid_1_id, field_2_id, rez_id){
-    let min = document.getElementById(fieid_1_id);
-    let max = document.getElementById(field_2_id);    
-    let start = parseInt(min.value);
-    let end = parseInt(max.value);
+function idealInRange(fieid_1_id, field_2_id, rez_id){        
+    let start = transformInputInInt(fieid_1_id);
+    let end = transformInputInInt(field_2_id);
     let idealNumbers = '';
     for(i=start; i<=end; i++){
         if(isIdeal(i)) {
@@ -146,9 +139,7 @@ function idealInRange(fieid_1_id, field_2_id, rez_id){
 
 // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
 
-function transformInputInInt(input_id){
-    return parseInt(document.getElementById(input_id).value) || 0;
-}
+const transformInputInInt = (input_id) => parseInt(document.getElementById(input_id).value) || 0;
 
 const addZero = n=>n<10?'0'+n:n;
 
@@ -174,10 +165,7 @@ function timeInSecond(field_1_id, field_2_id, field_3_id){
     return second;    
 }
 
-function allInSec(h, m, s){
-    second = s + (m*60) + (h*3600);
-    return second;
-}
+const allInSec = (h, m, s) => second = s + (m*60) + (h*3600);
 
 function timeSecInText(field_1_id, field_2_id, field_3_id, rez_id){
     let second = timeInSecond(field_1_id, field_2_id, field_3_id);

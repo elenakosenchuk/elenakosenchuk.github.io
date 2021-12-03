@@ -47,13 +47,9 @@ function factorial(num_id, factorial_id) {
   }
 }
 
-function numberFactorial(a) {
-  if (a < 2) {
-    return a;
-  }
-
-  return a * numberFactorial(a - 1);
-} // 3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
+var numberFactorial = function numberFactorial(a) {
+  return a < 2 ? a : a * numberFactorial(a - 1);
+}; // 3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
 
 
 function transform(field_1_id, field_2_id, field_3_id, rez_id) {
@@ -116,7 +112,7 @@ function idealNumber(field_1_id, ideal_id) {
   }
 }
 
-function isIdeal(number) {
+var isIdeal = function isIdeal(number) {
   var divider = 1;
   var summDivider = 0;
 
@@ -127,14 +123,12 @@ function isIdeal(number) {
   }
 
   return number == summDivider;
-} // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
+}; // 6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
 
 
 function idealInRange(fieid_1_id, field_2_id, rez_id) {
-  var min = document.getElementById(fieid_1_id);
-  var max = document.getElementById(field_2_id);
-  var start = parseInt(min.value);
-  var end = parseInt(max.value);
+  var start = transformInputInInt(fieid_1_id);
+  var end = transformInputInInt(field_2_id);
   var idealNumbers = '';
 
   for (i = start; i <= end; i++) {
@@ -147,9 +141,9 @@ function idealInRange(fieid_1_id, field_2_id, rez_id) {
 } // 7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
 
 
-function transformInputInInt(input_id) {
+var transformInputInInt = function transformInputInInt(input_id) {
   return parseInt(document.getElementById(input_id).value) || 0;
-}
+};
 
 var addZero = function addZero(n) {
   return n < 10 ? '0' + n : n;
@@ -176,10 +170,9 @@ function timeInSecond(field_1_id, field_2_id, field_3_id) {
   return second;
 }
 
-function allInSec(h, m, s) {
-  second = s + m * 60 + h * 3600;
-  return second;
-}
+var allInSec = function allInSec(h, m, s) {
+  return second = s + m * 60 + h * 3600;
+};
 
 function timeSecInText(field_1_id, field_2_id, field_3_id, rez_id) {
   var second = timeInSecond(field_1_id, field_2_id, field_3_id);
