@@ -155,8 +155,7 @@ const addZero = n=>n<10?'0'+n:n;
 function time(field_1_id, field_2_id, field_3_id, rez_id){
     let hours = transformInputInInt(field_1_id);
     let minutes = transformInputInInt(field_2_id);
-    let seconds = transformInputInInt(field_3_id);
-    let fullTime = '';    
+    let seconds = transformInputInInt(field_3_id);       
     minutes = minutes + Math.abs(Math.trunc(seconds/60));
     seconds = Math.abs(seconds%60);
     hours = hours + Math.abs(Math.trunc(minutes/60));
@@ -166,5 +165,60 @@ function time(field_1_id, field_2_id, field_3_id, rez_id){
 }
 
 // 8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
+
+function timeInSecond(field_1_id, field_2_id, field_3_id){
+    let hour = transformInputInInt(field_1_id);
+    let minute = transformInputInInt(field_2_id);
+    let second = transformInputInInt(field_3_id);
+    second = allInSec(hour, minute, second)    
+    return second;    
+}
+
+function allInSec(h, m, s){
+    second = s + (m*60) + (h*3600);
+    return second;
+}
+
+function timeSecInText(field_1_id, field_2_id, field_3_id, rez_id){
+    let second = timeInSecond(field_1_id, field_2_id, field_3_id);
+    time_sec = `${addZero(second)}`;
+    printResult(`Время - ${time_sec} сек.`, rez_id);
+}
+
 // 9. Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
+
+function secondInTime(field_1_id, rez_id){
+    let sec = transformInputInInt(field_1_id);
+    let t = secInT(sec);     
+    timeText = `${addZero(t.h)}:${addZero(t.min)}:${addZero(t.sec)}`;
+    printResult(`Время ${timeText}`, rez_id);
+}
+
+function secInT(sec){
+    let min = Math.abs(Math.trunc(sec/60));
+    let h = Math.abs(Math.trunc(sec/3600));
+    sec = Math.abs(sec%60);    
+    min = Math.abs(min%60);
+    let time = {h, min, sec};
+    return time;    
+}
+
 // 10. Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».
+
+function timeDifference(field_1_id, field_2_id, field_3_id, field_4_id, field_5_id, field_6_id, rez_id){
+    
+    let hour_1 = transformInputInInt(field_1_id);
+    let minute_1 = transformInputInInt(field_2_id);
+    let second_1 = transformInputInInt(field_3_id);
+    let hour_2 = transformInputInInt(field_4_id);
+    let minute_2 = transformInputInInt(field_5_id);
+    let second_2 = transformInputInInt(field_6_id);
+
+    let time_1 = allInSec(hour_1, minute_1, second_1);
+    let time_2 = allInSec(hour_2, minute_2, second_2);
+    let diff = Math.abs(time_1 - time_2);
+
+    let to = secInT(diff);
+    timeText = `${addZero(to.h)}:${addZero(to.min)}:${addZero(to.sec)}`;
+    printResult(`Разница - ${timeText}`, rez_id);
+}

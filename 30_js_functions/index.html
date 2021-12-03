@@ -141,6 +141,78 @@
                     </div>  
                 </div>
             </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="hour_2" value="" placeholder="Введите часы...">
+                        <br>
+                        <br>
+                        <input type="number" id="minute_2" value="" placeholder="Введите минуты...">
+                        <br>
+                        <br>
+                        <input type="number" id="second_2" value="" placeholder="Введите секунды...">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="time_sec" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="timeSecInText('hour_2', 'minute_2', 'second_2', 'time_sec')">Посмотреть время в секундах</button>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>9. Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».</h5>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="second_3" value="" placeholder="Введите секунды...">                             
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="time_full" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="secondInTime('second_3', 'time_full')">Показать время</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>10. Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».</h5>
+                    </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">                        
+                                    <input type="number" id="hour_10" value="" placeholder="Введите часы...">
+                                    <br>
+                                    <br>
+                                    <input type="number" id="minute_10" value="" placeholder="Введите минуты...">
+                                    <br>
+                                    <br>
+                                    <input type="number" id="second_10" value="" placeholder="Введите секунды...">                        
+                                </div>
+                                <div class="col">                       
+                                    <input type="number" id="hour_11" value="" placeholder="Введите часы...">
+                                    <br>
+                                    <br>
+                                    <input type="number" id="minute_11" value="" placeholder="Введите минуты...">
+                                    <br>
+                                    <br>
+                                    <input type="number" id="second_11" value="" placeholder="Введите секунды...">
+                                </div>
+                            </div>                                                          
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <div id="time_rez" class="p-3 border bg-light"></div>
+                            <button class="btn btn-info" onclick="timeDifference('hour_10', 'minute_10', 'second_10', 'hour_11', 'minute_11', 'second_11', 'time_rez')">Считать</button>
+                        </div>  
+                </div>
+            </div>
         </div>
 
 
