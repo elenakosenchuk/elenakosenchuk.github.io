@@ -178,7 +178,7 @@ function timeSecInText(field_1_id, field_2_id, field_3_id, rez_id){
 function secondInTime(field_1_id, rez_id){
     let sec = transformInputInInt(field_1_id);
     let t = secInT(sec);     
-    timeText = `${addZero(t.h)}:${addZero(t.min)}:${addZero(t.sec)}`;
+    timeText = `${addZero(t.hour)}:${addZero(t.minute)}:${addZero(t.second)}`;
     printResult(`Время ${timeText}`, rez_id);
 }
 
@@ -187,7 +187,7 @@ function secInT(sec){
     let h = Math.abs(Math.trunc(sec/3600));
     sec = Math.abs(sec%60);    
     min = Math.abs(min%60);
-    let time = {h, min, sec};
+    let time = {hour: h, minute: min, second: sec};
     return time;    
 }
 
@@ -207,6 +207,6 @@ function timeDifference(field_1_id, field_2_id, field_3_id, field_4_id, field_5_
     let diff = Math.abs(time_1 - time_2);
 
     let to = secInT(diff);
-    timeText = `${addZero(to.h)}:${addZero(to.min)}:${addZero(to.sec)}`;
+    timeText = `${addZero(to.hour)}:${addZero(to.minute)}:${addZero(to.second)}`;
     printResult(`Разница - ${timeText}`, rez_id);
 }

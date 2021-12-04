@@ -184,7 +184,7 @@ function timeSecInText(field_1_id, field_2_id, field_3_id, rez_id) {
 function secondInTime(field_1_id, rez_id) {
   var sec = transformInputInInt(field_1_id);
   var t = secInT(sec);
-  timeText = "".concat(addZero(t.h), ":").concat(addZero(t.min), ":").concat(addZero(t.sec));
+  timeText = "".concat(addZero(t.hour), ":").concat(addZero(t.minute), ":").concat(addZero(t.second));
   printResult("\u0412\u0440\u0435\u043C\u044F ".concat(timeText), rez_id);
 }
 
@@ -194,9 +194,9 @@ function secInT(sec) {
   sec = Math.abs(sec % 60);
   min = Math.abs(min % 60);
   var time = {
-    h: h,
-    min: min,
-    sec: sec
+    hour: h,
+    minute: min,
+    second: sec
   };
   return time;
 } // 10. Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».
@@ -213,6 +213,6 @@ function timeDifference(field_1_id, field_2_id, field_3_id, field_4_id, field_5_
   var time_2 = allInSec(hour_2, minute_2, second_2);
   var diff = Math.abs(time_1 - time_2);
   var to = secInT(diff);
-  timeText = "".concat(addZero(to.h), ":").concat(addZero(to.min), ":").concat(addZero(to.sec));
+  timeText = "".concat(addZero(to.hour), ":").concat(addZero(to.minute), ":").concat(addZero(to.second));
   printResult("\u0420\u0430\u0437\u043D\u0438\u0446\u0430 - ".concat(timeText), rez_id);
 }
