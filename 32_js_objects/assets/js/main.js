@@ -47,16 +47,22 @@ function addFuel(field_id, rez_id){
     document.getElementById(field_id).value = "";        
 }
 
-
+function secInT(sec){
+    let min = Math.abs(Math.trunc(sec/60));
+    let h = Math.abs(Math.trunc(sec/3600));
+    sec = Math.abs(sec%60);    
+    min = Math.abs(min%60);
+    let time = {hour: h, minute: min, second: sec};
+    return time;    
+}
 
 function nedeedTime(field_1_id, field_2_id, rez_id, error_id){    
     printError('', error_id);
     printResult(``, rez_id);
     let distance = transformInputInInt(field_1_id);
     let name = document.getElementById(field_2_id).value;
-    let time = Math.trunc(distance / car.speed);    
-    let enoughtFuel = car["average Fuel"] * distance / 100;
-    // debugger;       
+    let timeS = Math.trunc(distance / car.speed) * 3600;
+    let enoughtFuel = car["average Fuel"] * distance / 100;            
     if(car.drivers.indexOf(name) == -1){
         printError('This person cannot drive', error_id);                
         return false;
@@ -68,10 +74,52 @@ function nedeedTime(field_1_id, field_2_id, rez_id, error_id){
         printError('Car need more fuel', error_id);        
         return false;
     }
-    if(time%4 == 0){
-        time = (time + Math.trunc(time/4)) - 1;
+    if(timeS%4 == 0){
+        timeS = (timeS + Math.trunc(timeS/4)) - 3600;
     }else{
-        time = time + Math.trunc(time/4);
-    }    
-    printResult(`You will cover this distance in ${time} hours`, rez_id);       
+        timeS = timeS + Math.trunc(timeS/4);
+    }
+    let time = secInT(timeS);
+    timeText = `${addZero(time.hour)}h : ${addZero(time.minute)}m : ${addZero(time.second)}s`;    
+    printResult(`You will cover this distance in ${timeText}`, rez_id);       
+}
+
+const addZero = n=>n<10?'0'+n:n;
+
+let TIME = {
+    hour: 10,
+    minute: 20,
+    second: 30
+}
+
+function startTime(TIME){
+    let fullTime = `${addZero(TIME.hour)}:${addZero(TIME.minute)}:${addZero(TIME.second)}`;    
+    document.getElementById('time_obj').innerHTML = fullTime;
+}
+
+function changeSecond(field_id){    
+    let s = transformInputInInt(field_id);    
+    TIME.second = TIME.second + s;
+    TIME.minute = TIME.minute + Math.abs(Math.trunc(TIME.second/60));
+    TIME.second = TIME.second%60;
+    TIME.hour = TIME.hour + Math.abs(Math.trunc(TIME.minute/60));
+    TIME.minute = Math.abs(TIME.minute%60);    
+    startTime(TIME);
+    document.getElementById(field_id).value = "";    
+}
+
+function changeMinute(field_id){
+    let m = transformInputInInt(field_id);
+    TIME.minute = TIME.minute + m;    
+    TIME.hour = TIME.hour + Math.abs(Math.trunc(TIME.minute/60));
+    TIME.minute = Math.abs(TIME.minute%60);
+    startTime(TIME);
+    document.getElementById(field_id).value = ""; 
+}
+
+function changeHour(field_id){
+    let h = transformInputInInt(field_id);
+    TIME.hour = TIME.hour + h;
+    startTime(TIME);
+    document.getElementById(field_id).value = ""; 
 }

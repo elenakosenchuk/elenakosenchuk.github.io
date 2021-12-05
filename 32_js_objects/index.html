@@ -50,19 +50,23 @@
 
             <div class="col-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h4>Clock</h4>
+                    <div class="card-header d-flex justify-content-between">
+                        <h4>CLOCK</h4>
+                        <button class="btn btn-primary" onclick="startTime(TIME)">Show time</button>
                     </div>
-                    <div class="card-body">
-                        <input type="number" id="" value="">
-                        <br>
-                        <br>
-                        <input type="number" id="" value="">           
+                    <div class="card-body" id="time_obj"></div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <input type="number" id="hour" class="p-2 border bg-light" value="" placeholder="Change hours...">
+                        <button class="btn btn-info" onclick="changeHour('hour');">Change hours</button>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
-                        <div id="" class="p-3 border bg-light"></div>
-                        <button class="btn btn-info" onclick="('side_1', 'side_2', 'sq')">Считать</button>
-                    </div>  
+                        <input type="number" id="minute" class="p-2 border bg-light" value="" placeholder="Change minutes...">
+                        <button class="btn btn-info" onclick="changeMinute('minute');">Change minutes</button>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <input type="number" id="second" class="p-2 border bg-light" value="" placeholder="Change seconds...">
+                        <button class="btn btn-info" onclick="changeSecond('second');">Change seconds</button>
+                    </div>
                 </div>
             </div>
         </div>
