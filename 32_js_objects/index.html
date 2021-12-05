@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">    
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4>CAR</h4>
+                        <button class="btn btn-primary" onclick="myCar(car)">Car characteristic</button>
+                    </div>
+                    <div class="card-body" id="car_discription"></div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <input type="text" id="driver" class="p-2 border bg-light" value="" placeholder="Add driver...">
+                        <button class="btn btn-info" onclick="addDriver('driver'); myCar(car);">Add driver</button>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between flex-wrap">    
+                        <input type="number" id="fuel" class="p-2 border bg-light" value="" placeholder="Add fuel...">                        
+                        <button class="btn btn-info" onclick="addFuel('fuel', 'error'); myCar(car);">Add fuel</button>
+                        <div id="error"></div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col">
+                                <input type="number" id="distance" class="p-2 border bg-light" value="" placeholder="Add distance...">
+                            </div>
+                            <div class="col">
+                                <input type="text" id="driv" class="p-2 border bg-light" value="" placeholder="Who will drive?">
+                            </div>
+                            <div id="fail"></div>                            
+                        </div>                                        
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="result"></div>                        
+                        <button class="btn btn-info" onclick="nedeedTime('distance', 'driv', 'result', 'fail');">Send</button>                        
+                    </div>                      
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Clock</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="number" id="" value="">
+                        <br>
+                        <br>
+                        <input type="number" id="" value="">           
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div id="" class="p-3 border bg-light"></div>
+                        <button class="btn btn-info" onclick="('side_1', 'side_2', 'sq')">Считать</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>    
+</body>
+</html>

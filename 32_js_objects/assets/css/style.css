@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#car_discription {
+  font-size: 18px;
+}
+
+dt {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+dd {
+  margin-left: 200px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+  text-align: end;
+  padding: 0 20px;
+}
