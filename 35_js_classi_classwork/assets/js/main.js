@@ -45,6 +45,8 @@
 // console.log(Ann.userInfo);
 
 class Figure{
+    name = 'Figure'; // обычное свойство
+
     constructor(width, height, left, top, radius='0px', color='tomato'){
         this.width = width;
         this.height = height;
@@ -53,7 +55,11 @@ class Figure{
         this.color = color; 
         this.radius = radius;       
     }
+    _compareWidth = function(width_1, width_2){
+        return width_1 - width_2;
+    } // статический метод начинается с _
 
+    // приватный метод начинается с #, его можно вызвать только внутри класс. Внутри методов этого же класса
     createFigure = function(){        
         let div = document.createElement('div');
         div.style.width = this.width + 'px';
@@ -87,6 +93,8 @@ class Circle extends Square {
 }
 
 class RedCircle extends Circle {
+    name = 'Circle';
+
     constructor(width, left, top){
         super(width, left, top, '#f00');
     }
@@ -94,6 +102,8 @@ class RedCircle extends Circle {
 
 const rect = new Figure(200, 100 , 300, 150, '20px');
 const rect2 = new Figure(40, 200 , 50, 50);
+rect2._compareWidth(rect.width, rect2.width);
+
 rect2.setColor = 'yellow';
 rect.draw();
 rect2.draw();
@@ -112,3 +122,13 @@ cir2.draw();
 
 const bullsEye = new RedCircle(50, 20,30);
 bullsEye.draw();
+
+const cir = new Circle(135);
+
+let circle_info = {
+    Radius: cir.getRadius,
+}
+
+for(let p in circle_info){
+    //TODO: form html
+}
