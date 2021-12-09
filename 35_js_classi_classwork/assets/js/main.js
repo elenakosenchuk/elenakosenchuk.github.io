@@ -123,12 +123,3 @@ cir2.draw();
 const bullsEye = new RedCircle(50, 20,30);
 bullsEye.draw();
 
-const cir = new Circle(135);
-
-let circle_info = {
-    Radius: cir.getRadius,
-}
-
-for(let p in circle_info){
-    //TODO: form html
-}
