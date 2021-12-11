@@ -8,14 +8,30 @@
 </head>
 <body>
     
-    <div class="input_wrap">
-        <input type="number" id="radius" value="" placeholder="Enter radius...">
+    <div class="task_1">
+        <div class="input_wrap">
+            <input type="number" id="radius" value="" placeholder="Enter radius...">
+        </div>
+        <div class="btn_wrap">
+            <button class="btn" onclick="createCircle('radius', 'circle_info', 'drow_circle');">Create circle</button>
+        </div>
+        <div class="info" id="circle_info"></div>
+        <div class="cir" id="drow_circle"></div>
     </div>
-    <div class="btn_wrap">
-        <button class="btn" onclick="createCircle('radius', 'circle_info', 'drow_circle');">Create circle</button>
+
+    <div class="task_2">
+        <div id="text_wrap"></div>
+        <div class="btn_wrap">
+            <button class="btn_textmarker" onclick="colorText.printMarker('text_wrap');">Start marker</button>
+        </div>
+        <div class="for_input">
+            <input type="number" id="ink" value="" placeholder="Enter ink amount...">
+        </div>
+        <div class="btn_wrap">
+            <button class="btn_marker" onclick="printText('ink', 'text_wrap');">Recharge marker</button>
+        </div>
     </div>
-    <div class="info" id="circle_info"></div>
-    <div class="cir" id="drow_circle"></div>
+
 
     <script src="assets/js/main.js"></script>
 </body>

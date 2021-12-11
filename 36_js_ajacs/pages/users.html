@@ -1,0 +1,60 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Arthors</h1>    
+  </div>
+
+  <div id="authors_cards">
+  
+</div>
+
+  <script>
+      $(function(){
+        $.ajax({
+            url:'https://jsonplaceholder.typicode.com/users',
+            type:'get',
+            dataType:'json',
+            success:function(json){
+                let html = '';
+                json.forEach((user)=>{
+                    html += `
+                    <div class="card mb-4" data-userid="${user.id}">
+     <div class="card-header d-flex justify-content-between">
+        <h4>${user.name} <span class="small">[${user.email}]</span></h4>
+        <button type="button" class="btn btn-info user_more">More</button>
+     </div>
+     <div class="card-body">
+        <div class="user_info"></div>
+    </div>
+  </div>`;
+                });
+                $("#authors_cards").html(html);
+            }
+        });
+
+        $(document).on('click', '.user_more', function(){
+            const id = $(this).parents(".card").data("userid"); // вернет число
+            // const id = $(this).parents(".card").attr("data-userid"); // вернет строку
+            $.ajax({
+                url:'https://jsonplaceholder.typicode.com/users/'+id,
+                type:'get',
+            dataType:'json',
+            success:function(json){
+                let html = `
+                <dl>
+                    <dt>Username</dt>
+                    <dd${json.username}></dd>
+                    <dt>Adress</dt>
+                    <dd>${json.address.city}, ${json.address.street}</dd>
+                    <dt>Phone number</dt>
+                    <dd>${json.phone}</dd>
+                    <dt>Site</dt>
+                    <dd><a href="http://${json.website}" target="_blank">${json.website}</a></dd>
+                    <dt>Company</dt>
+                    <dd>${json.company.name}</dd>                       
+                </dl>
+                `;
+                $(".card[data-userid='"+id+"']").find(".user_info").html(html);
+                }
+            });
+        });
+      });
+  </script>

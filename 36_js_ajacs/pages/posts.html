@@ -1,0 +1,53 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Blog</h1>    
+  </div>
+
+  <div id="posts_cards">
+  
+</div>
+
+<script>
+
+
+$(function(){
+    let AUTHORS = {};
+    $.ajax({
+            url:'https://jsonplaceholder.typicode.com/users',
+            type:'get',
+            dataType:'json',
+            success:function(json){
+                json.forEach((user)=>{
+                   AUTHORS[user.id] = user.name;
+                });
+               getPosts();            
+            }
+        });    
+
+
+    
+    function getPosts(){
+        $.ajax({
+                url:'https://jsonplaceholder.typicode.com/posts',
+                type:'get',
+                dataType:'json',
+                success:function(json){
+                    let html = '';
+                    json.forEach((post)=>{
+                        html += `
+                        <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+            <h4>${post.title}</h4>
+            <span class="small">${AUTHORS[post.userId]}</span>        
+        </div>
+        <div class="card-body">
+            <p>${post.body}</p>
+        </div>
+    </div>`;
+                    });
+                    $("#posts_cards").html(html);
+                }
+            });    
+    }
+})
+
+</script>
