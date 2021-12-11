@@ -1,22 +1,3 @@
-// let circle_wrap = document.createElement('div');
-// document.body.prepend(circle_wrap);
-
-// function drawCircle(r=10, bgc='tomato'){
-//     // let circle = document.createElement('div');
-//     // circle.style.width = (2*r)+'px';
-//     // circle.style.height = (2*r)+'px';
-//     // circle.style.backgroundColor = bgc;
-//     // circle.style.borderRadius = '50%';
-//     // circle_wrap.innerHTML = '';
-//     // circle_wrap.append(circle);
-
-//     circle_wrap.innerHTML = `<div style="width:${2*r}px;height:${2*r}px;background-color:${bgc};border-radius:50%"></div>`;    
-// }
-
-// drawCircle(50);
-// drawCircle(150);
-// drawCircle(200);
-
 /*
 C - create PUT
 R - read GET

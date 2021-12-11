@@ -6,30 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="display: flex; justify-content: center; gap: 100px; padding-top: 100px;">
     
     <div class="task_1">
-        <div class="input_wrap">
-            <input type="number" id="radius" value="" placeholder="Enter radius...">
+        <div class="input_wrap" style="margin-bottom: 30px;">
+            <input type="number" id="radius" value="" placeholder="Enter radius..." style="width: 250px; height: 30px; background-color: rgb(228, 227, 227); font-size: 18px; color: #000; border-radius: 10px;">
         </div>
+
         <div class="btn_wrap">
-            <button class="btn" onclick="createCircle('radius', 'circle_info', 'drow_circle');">Create circle</button>
+            <button class="btn" onclick="createCircle('radius', 'circle_info', 'drow_circle');" style="width: 250px; height: 50px; border-radius: 10px; background-color: cornflowerblue; color: #fff; border: none; font-size: 20px;">Create circle</button>
         </div>
-        <div class="info" id="circle_info"></div>
+        <div class="info" id="circle_info" style="font-size: 18px;"></div>
         <div class="cir" id="drow_circle"></div>
     </div>
 
-    <div class="task_2">
-        <div id="text_wrap"></div>
+    <div class="task_2">        
         <div class="btn_wrap">
-            <button class="btn_textmarker" onclick="colorText.printMarker('text_wrap');">Start marker</button>
+            <button class="btn_textmarker" onclick="colorText.printMarker('text_wrap');" style="width: 250px; height: 50px; border-radius: 10px; background-color: cornflowerblue; color: #fff; border: none; font-size: 20px; margin-bottom: 30px;">Start marker</button>
         </div>
         <div class="for_input">
-            <input type="number" id="ink" value="" placeholder="Enter ink amount...">
+            <input type="number" id="ink" value="" placeholder="Enter ink amount..." style="width: 250px; height: 30px; background-color: rgb(228, 227, 227); font-size: 18px; color: #000; border-radius: 10px; margin-bottom: 30px;">
         </div>
         <div class="btn_wrap">
-            <button class="btn_marker" onclick="printText('ink', 'text_wrap');">Recharge marker</button>
+            <button class="btn_marker" onclick="printText('ink', 'text_wrap');" style="width: 250px; height: 50px; border-radius: 10px; background-color: cornflowerblue; color: #fff; border: none; font-size: 20px; margin-bottom: 30px;">Recharge marker</button>
         </div>
+        <div id="text_wrap" style="width: 250px; font-size: 18px;"></div>
+    </div>
+
+    <div class="task_3">
+        <div class="btn_wrap">
+            <button class="btn_employee" onclick="createEmpTable('emp_table');" style="width: 250px; height: 50px; border-radius: 10px; background-color: cornflowerblue; color: #fff; border: none; font-size: 20px; margin-bottom: 30px;">Create table</button>
+        </div>
+        <div id="emp_table" style="font-size: 18px;"></div>
     </div>
 
 
