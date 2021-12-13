@@ -1,0 +1,49 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Contact Us</h1>    
+  </div>
+
+ <div class="row">
+     <div class="col-3">&nbsp;</div>
+     <div class="col-6">
+        <form id="contact_form">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <input type="text" class="form-control" id="massage">
+              </div>               
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+     </div>
+     <div class="col-3">&nbsp;</div>
+ </div>
+
+ <script>
+     $(function(){
+         $("#contact_form").on('submit', function(e){
+             e.preventDefault();
+             console.log("SEND FORM!");             
+            const BOT_TOKEN = '5060479505:AAE5--JEDUqjudIJcP82clFnIAf1HMRrjA4';
+            // @get_id_bot and /get_id
+            const CHAT_ID = '-1001765759474';
+            let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
+                if(json.ok){
+                    $("#contact_form").trigger('reset');
+                    alert("Message successfully send");
+                }else{
+                    alert(json.description);
+                }
+            });
+
+         });
+     });
+ </script>

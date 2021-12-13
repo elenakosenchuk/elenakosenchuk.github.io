@@ -14,5 +14,9 @@
     {
     "name":"Pricing",
     "file":"pricing"  
+    },
+    {
+    "name":"Contact Us",
+    "file":"contacts"  
     }
 ]
