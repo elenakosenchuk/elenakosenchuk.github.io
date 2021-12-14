@@ -123,3 +123,83 @@ function changeHour(field_id){
     startTime(TIME);
     document.getElementById(field_id).value = ""; 
 }
+
+
+class Fraction{
+    constructor(numerator=0, denumerator=1){        
+    this.numerator = numerator;
+    this.denumerator = denumerator;
+    }
+    simplify = function(){
+        let start = 0;
+        if(this.numerator < this.denumerator){
+            start = this.numerator;
+        }else{
+            start = this.denumerator;
+        }
+        let divider = 1;        
+        let maxDivider = 1;
+        while(divider <= start){
+            if(this.numerator % divider == 0 && this.denumerator % divider == 0) {
+                maxDivider = divider;            
+            }
+            divider++;                
+        }
+        return new Fraction(this.numerator / maxDivider,
+        this.denumerator / maxDivider);
+    }
+    mul = function(number){
+        this.numerator *= number;
+        this.denumerator *= number;
+    }
+}
+ class Action{
+     constructor(fraction_1, fraction_2){
+        this.fraction_1 = fraction_1;
+        this.fraction_2 = fraction_2;
+     }
+     get addition(){
+        this.fraction_1.mul(this.fraction_2.denumerator);
+        this.fraction_2.mul(this.fraction_1.denumerator);
+        return (new Fraction(
+            this.fraction_1.numerator + this.fraction_2.numerator,
+            this.fraction_1.denumerator)).simplify();
+     }
+     get subtraction(){
+        this.fraction_1.mul(this.fraction_2.denumerator);
+        this.fraction_2.mul(this.fraction_1.denumerator);
+        return (new Fraction(
+            this.fraction_1.numerator - this.fraction_2.numerator,
+            this.fraction_1.denumerator)).simplify();
+     }
+     get multiplication(){       
+        return (new Fraction(
+            this.fraction_1.numerator * this.fraction_2.numerator, 
+            this.fraction_1.denumerator * this.fraction_2.denumerator)).simplify();
+     }
+     get division(){
+        return (new Fraction(
+            this.fraction_1.numerator * this.fraction_2.denumerator, 
+            this.fraction_1.denumerator * this.fraction_2.numerator)).simplify();
+     }     
+ }
+
+ 
+
+ function startAction(d1_num_field, d1_denum_field, d2_num_field, d2_denum_field, action_field, rez_1_field, rez_2_field){
+    let d_1 = new Fraction(transformInputInInt(d1_num_field), transformInputInInt(d1_denum_field));
+    let d_2 = new Fraction(transformInputInInt(d2_num_field), transformInputInInt(d2_denum_field));
+    let act = new Action(d_1, d_2);
+    let rez = new Fraction(1, 1);
+    if(document.getElementById(action_field).value = '+'){
+       rez = act.addition;
+    }else if(document.getElementById(action_field).value = '-'){
+        rez = act.subtraction;
+    }else if(document.getElementById(action_field).value = '*'){
+        rez = act.multiplication;
+    }else if(document.getElementById(action_field).value = '/'){
+        rez = act.division;
+    }
+    document.getElementById(rez_1_field).innerHTML = rez.numerator;
+    document.getElementById(rez_2_field).innerHTML = rez.denumerator;
+ }
