@@ -8,8 +8,8 @@
     "file":"users"
         },
     {
-        "name":"Blog",
-        "file":"posts"
+    "name":"Blog",
+    "file":"posts"
     },
     {
     "name":"Pricing",
@@ -18,5 +18,9 @@
     {
     "name":"Contact Us",
     "file":"contacts"  
+    },
+    {
+    "name":"Sliders",
+    "file":"sliders"  
     }
 ]
