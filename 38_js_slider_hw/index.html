@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/plugins/lightslider/css/lightslider.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header_text">
+            <div class="subtext">
+                <p>our featured work</p>
+            </div>
+            <div class="header_title">
+                <h2>We create engaging experiences through creativity & craft</h2>
+            </div>
+        </div>
+
+        <div class="slider_light">
+            <ul id="slider_1">
+                <li class="img_text pic_wrap">
+                    <div class="picture"><img data-src="assets/images/coach.jpg" alt="Coach picture"></div>
+                    <div class="pic_content">
+                        <h4>Apex Magazine June Issue</h4>
+                        <p>by Fabrizio Morra</p>
+                    </div>
+                </li>
+                <li class="pic_wrap">
+                    <div class="picture"><img data-src="assets/images/lamp.jpg" alt="Lamp picture"></div>
+                </li>
+                <li class="pic_wrap">
+                    <div class="picture"><img data-src="assets/images/bike.jpg" alt="Bike picture"></div>
+                </li>
+                <li class="pic_wrap">
+                    <div class="picture"><img data-src="assets/images/car.jpg" alt="CAr picture"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slider">
+            <ul id="slider_2">
+                <li class="img_text pic_wrap">
+                    <div class="picture"><img src="assets/images/coach.jpg" alt="Coach picture"></div>
+                    <div class="pic_content">
+                        <h4>Apex Magazine June Issue</h4>
+                        <p>by Fabrizio Morra</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="picture"><img src="assets/images/lamp.jpg" alt="Lamp picture"></div>
+                </li>
+                <li>
+                    <div class="picture"><img src="assets/images/bike.jpg" alt="Bike picture"></div>
+                </li>
+                <li>
+                    <div class="picture"><img src="assets/images/car.jpg" alt="CAr picture"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="assets/js/lazyload.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/lightslider/js/lightslider.min.js"></script>
+
+    <script>
+        $(function () {
+            let slider = $('#slider_1').lightSlider({
+                item: 4,
+                loop: true,
+                slideMargin: 35,
+                onSliderLoad: function (el) {
+                    var showActiveSlides = function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.src = entry.target.dataset.src;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    };
+
+                    var imageWidth = el.find("li").outerWidth() + "px";
+
+                    var observer = new window.IntersectionObserver(showActiveSlides, {
+                        root: el.parent()[0],
+                        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+                    });
+
+                    el.find("li img").each(function () {
+                        observer.observe(this);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
