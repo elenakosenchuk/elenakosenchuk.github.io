@@ -1,49 +1,158 @@
+<link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
+
+<style>
+  /* .dashed {
+    height: 100px;
+    border: 1px solid red;
+    /* background-image: linear-gradient(to right, #000 0%, #000 75%, transparent 75%, transparent 100%);
+    background-size: 16px 4px;
+    background-repeat: repeat-x; */
+  /* 
+    background-image: linear-gradient(to right, #000 0%, #000 1%, transparent 1%, transparent 100%);
+    background-size: 150px 1px;
+    background-position: center top;
+  } */
+
+  .map_popup {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .map_popup img {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  #my_map {
+    position: relative;
+  }
+
+  #my_map p {
+    position: absolute;
+    z-index: 30;
+    font-size: 40px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    transition: all .2s ease;
+  }
+
+  #my_map a:hover p {
+    opacity: .5;
+  }
+</style>
+
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-    <h1 class="display-4 fw-normal">Contact Us</h1>    
+  <h1 class="display-4 fw-normal">Contact Us</h1>
+</div>
+
+<!-- <div class="dashed"></div> -->
+
+<div class="card">
+  <div class="card-header">Map</div>
+  <div class="card-body">
+    <div id="my_map" style="height: 300px;">
+      <a href="javascript:void(0)" id="init_map">
+        <img src="assets/images/apple-min.jpg" alt="">
+        <p>Click to interactive</p>
+      </a>
+    </div>
   </div>
+</div>
 
- <div class="row">
-     <div class="col-3">&nbsp;</div>
-     <div class="col-6">
-        <form id="contact_form">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <input type="text" class="form-control" id="massage">
-              </div>               
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-     </div>
-     <div class="col-3">&nbsp;</div>
- </div>
+<a href="https://www.google.com.ua/maps/place/@46.959136,31.9769152,17z" target="_blank" id="to_google_map"
+  style="display: none;"></a>
 
- <script>
-     $(function(){
-         $("#contact_form").on('submit', function(e){
-             e.preventDefault();
-             console.log("SEND FORM!");             
-            const BOT_TOKEN = '5060479505:AAE5--JEDUqjudIJcP82clFnIAf1HMRrjA4';
-            // @get_id_bot and /get_id
-            const CHAT_ID = '-1001765759474';
-            let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+<div class="row">
+  <div class="col-3">&nbsp;</div>
+  <div class="col-6">
+    <form id="contact_form">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Subject</label>
+        <input type="text" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <input type="text" class="form-control" id="massage">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-3">&nbsp;</div>
+</div>
 
-            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
-                if(json.ok){
-                    $("#contact_form").trigger('reset');
-                    alert("Message successfully send");
-                }else{
-                    alert(json.description);
-                }
-            });
+<script src="assets/plugins/leaflet/leaflet.js"></script>
+<script>
+  $(function () {
+    $("#init_map").on('click', function () {
+      $(this).remove();
+      var map = L.map('my_map').setView([46.95908844327158, 31.979050254006747], 15);
 
-         });
-     });
- </script>
+      L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var myIcon = L.icon({
+        iconUrl: 'assets/plugins/leaflet/images/marker-icon.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [0, -41],
+        shadowUrl: 'assets/plugins/leaflet/images/marker-shadow.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [25, 41]
+      });
+
+      const marker = L.marker([46.95908844327158, 31.979050254006747], {
+          icon: myIcon
+        }).addTo(map)
+        .bindPopup(`
+      <div class="map_popup">
+        <img src="assets/images/apple-min.jpg" alt="">
+        <div class="map_info">
+          <b>Hello!</b>
+          <p>I am here</p>
+        </div>
+      </div>`);
+
+      marker.on('click', function () {
+        document.getElementById('to_google_map').click();
+        // window.location.href = 'https://www.google.com.ua/maps/place/@46.959136,31.9769152,17z';
+      })
+    })
+
+
+    $("#contact_form").on('submit', function (e) {
+      e.preventDefault();
+      console.log("SEND FORM!");
+      const BOT_TOKEN = '5060479505:AAE5--JEDUqjudIJcP82clFnIAf1HMRrjA4';
+      // @get_id_bot and /get_id
+      const CHAT_ID = '-1001765759474';
+      let text = encodeURI("<b>Email:</b> " + $("#exampleInputEmail1").val() + "\n<b>Subject:</b> " + $(
+        "#exampleInputPassword1").val() + "\n<b>Message:</b> " + $("#massage").val());
+
+      $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=` + text +
+        '&parse_mode=html', (json) => {
+          if (json.ok) {
+            $("#contact_form").trigger('reset');
+            alert("Message successfully send");
+          } else {
+            alert(json.description);
+          }
+        });
+
+    });
+  });
+</script>
