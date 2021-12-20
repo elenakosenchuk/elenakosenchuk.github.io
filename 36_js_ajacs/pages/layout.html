@@ -1,0 +1,22 @@
+<div id="layout_content"></div>
+
+<script>
+    function loadLayout() {
+        let url = 'pages/login.html';
+        if (localStorage.getItem("user") !== null) {
+            url = 'pages/profile.html';
+        }
+        $.ajax({
+            url: url,
+            method: 'get',
+            type: 'html',
+            success: function (html) {
+                $("#layout_content").html(html);
+            }
+        });
+    }
+
+    $(function () {
+        loadLayout();
+    });
+</script>

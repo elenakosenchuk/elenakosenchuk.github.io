@@ -1,0 +1,33 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal" id="hello_title">Hello</h1>
+</div>
+
+<div class="card">
+    <div class="card-haeder">
+        User Information
+    </div>
+    <div class="card-body" id="user_info"></div>
+</div>
+<div class="card-footer">
+    <button type="button" class="btn brn-primary" id="logout">Logout</button>
+</div>
+
+<script>
+    $(function () {
+        const user = JSON.parse(localStorage.getItem("user"));
+        $("#hello_title").text(`Hello, ${user.name} ${user.last_name}`);
+        let userInfo = `
+        <ul>
+            <li><b>Name: </b>${user.name}</li>
+            <li><b>Last Name: </b>${user.last_name}</li>
+            <li><b>Login: </b>${user.username}</li>
+        </ul>
+        `;
+        $("#user_info").html(userInfo);
+
+        $("#logout").on('click', function () {
+            localStorage.removeItem("user");
+            loadPage('pages/layout.html');
+        })
+    });
+</script>

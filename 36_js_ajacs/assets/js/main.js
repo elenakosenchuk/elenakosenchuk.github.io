@@ -64,6 +64,32 @@ function loadPage(page_url){
 // loadPage();
 
 $(function(){
+
+//     const cookie_val = getCookie('test');
+//     if(cookie_val !== null){
+//         //TODP: обрабатываем куку
+//         eraseCookie('test');
+//     }else{
+//         setCookie('test', 'Hello!', 2);
+//     }
+//     console.log(cookie_val);
+
+//     const user = {
+//         name:"Vasia",
+//         email:"pupkin@gmail.com"
+//     }
+
+//     localStorage.setItem('localKey', JSON.stringify(user));
+
+//     const userInfo = JSON.parse(localStorage.getItem('userData'));
+
+//     localStorage.removeItem('userData');
+
+//     console.log(userInfo.name);
+
+//     sessionStorage.setItem('userData', JSON.stringify(user));
+
+
     loadPage('pages/main.html');
     $.ajax({
         url:'common/menu.json',
